@@ -1,0 +1,137 @@
+{
+  "owner_id": "d425df545e9decffbe652a6cf4cbd22a1993f267451d448851f9130942777bb3",
+  "owner_credentials": {
+    "username": "nae_owner",
+    "password_hash": "YOUR_BCRYPT_PASSWORD_HASH_HERE",
+    "email": "owner@nae-system.com",
+    "two_factor_enabled": true,
+    "api_key": "YOUR_OWNER_API_KEY_HERE",
+    "permissions": [
+      "kill_switch_control",
+      "goal_management",
+      "system_configuration",
+      "audit_access",
+      "production_deployment"
+    ],
+    "last_login": null,
+    "login_attempts": 0,
+    "account_locked": false,
+    "session_timeout": 3600
+  },
+  "goals": [
+    "Achieve generational wealth through VERY_AGGRESSIVE LIVE trading",
+    "Generate $5,000,000.00 within 8 years (stretch goal: $15,726,144), every 8 years consistently until commanded to stop by owner, and only the owner",
+    "Optimize NAE and agents for successful options trading via Tradier"
+  ],
+  "growth_milestones": {
+    "description": "Official NAE growth milestones from nae_mission_control.py",
+    "year_1": {
+      "target": 9411,
+      "returns": 6911,
+      "note": "Year 1: $9,411 (+$6,911 returns)"
+    },
+    "year_2": {
+      "target": 44110,
+      "returns": 39210,
+      "note": "Year 2: $44,110 (+$39,210 returns)"
+    },
+    "year_3": {
+      "target": 152834,
+      "returns": 145534,
+      "note": "Year 3: $152,834 (+$145,534 returns)"
+    },
+    "year_4": {
+      "target": 388657,
+      "returns": 378957,
+      "note": "Year 4: $388,657 (+$378,957 returns)"
+    },
+    "year_5": {
+      "target": 982500,
+      "returns": 970400,
+      "note": "Year 5: $982,500 (+$970,400 returns)"
+    },
+    "year_6": {
+      "target": 2477897,
+      "returns": 2463397,
+      "note": "Year 6: $2,477,897 (+$2,463,397 returns)"
+    },
+    "year_7": {
+      "target": 6243561,
+      "returns": 6243561,
+      "note": "Year 7: $6,243,561 [TARGET EXCEEDED!]"
+    },
+    "year_8": {
+      "target": 15726144,
+      "returns": 15706844,
+      "note": "Year 8: $15,726,144 [FINAL: $15.7M]"
+    }
+  },
+  "milestones": {
+    "1": 9411,
+    "2": 44110,
+    "3": 152834,
+    "4": 388657,
+    "5": 982500,
+    "6": 2477897,
+    "7": 6243561,
+    "8": 15726144
+  },
+  "returns": {
+    "1": 6911,
+    "2": 39210,
+    "3": 145534,
+    "4": 378957,
+    "5": 970400,
+    "6": 2463397,
+    "7": 6243561,
+    "8": 15706844
+  },
+  "primary_goal": {
+    "target_amount": 5000000.00,
+    "stretch_goal": 15726144.00,
+    "target_currency": "USD",
+    "timeframe_years": 8,
+    "starting_capital": 100.00,
+    "biweekly_deposit": 100.00,
+    "recurring": true,
+    "recurring_cycle_years": 8,
+    "stop_only_by_owner": true,
+    "description": "Generate $5,000,000.00 within 8 years (exceeds in Year 7, stretch goal $15.7M in Year 8), every 8 years consistently until commanded to stop by owner, and only the owner. Consistent Generational wealth is the ultimate goal.",
+    "start_date": "2026-01-06T00:00:00Z",
+    "current_cycle_start": "2026-01-06T00:00:00Z",
+    "cycles_completed": 0,
+    "total_generated": 0.0
+  },
+  "trading_configuration": {
+    "mode": "LIVE",
+    "broker": "tradier",
+    "aggressiveness": "VERY_AGGRESSIVE",
+    "risk_adjustment_factor": 1.5,
+    "day_trading": "ENABLED",
+    "paper_trading": "DISABLED",
+    "sandbox_mode": "DISABLED"
+  },
+  "compliance": {
+    "day_trading_prevention": {
+      "enabled": false,
+      "description": "Day trading ENABLED for cash accounts - unlimited day trades allowed"
+    },
+    "legal_compliance": {
+      "enforced": true,
+      "regulations": ["SEC", "FINRA"],
+      "description": "Maintain full legal compliance at all times"
+    }
+  },
+  "goal_2_active": true,
+  "goal_2_stop_commands": [],
+  "security_settings": {
+    "require_authentication": true,
+    "max_login_attempts": 3,
+    "lockout_duration": 900,
+    "password_min_length": 12,
+    "password_require_special_chars": true,
+    "session_timeout": 3600,
+    "audit_all_actions": true
+  },
+  "last_updated": "2026-01-06T00:00:00Z"
+}

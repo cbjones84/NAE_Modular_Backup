@@ -1,0 +1,22 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Install PyBroker
+RUN pip install pybroker
+
+# Copy execution engine code
+COPY execution_engine/ ./execution_engine/
+COPY broker_adapters/ ./broker_adapters/
+
+# Set environment variables
+ENV PYTHONPATH=/app
+ENV EXECUTION_ENGINE=quanttrader_pybroker
+
+# Run execution manager
+CMD ["python3", "-m", "execution_engine.execution_manager"]
+

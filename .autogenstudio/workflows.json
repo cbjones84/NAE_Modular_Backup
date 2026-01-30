@@ -1,0 +1,52 @@
+{
+  "NAE_Trading_Workflow": {
+    "name": "NAE Trading Workflow",
+    "type": "groupchat",
+    "agents": [
+      "Casey",
+      "Optimus",
+      "Ralph"
+    ],
+    "max_rounds": 10,
+    "speaker_selection_method": "round_robin",
+    "termination_condition": "all_agents_agree"
+  },
+  "NAE_Research_Workflow": {
+    "name": "NAE Research Workflow",
+    "type": "groupchat",
+    "agents": [
+      "Casey",
+      "Ralph",
+      "Donnie"
+    ],
+    "max_rounds": 10,
+    "speaker_selection_method": "round_robin",
+    "termination_condition": "all_agents_agree"
+  },
+  "NAE_Wealth_Management": {
+    "name": "NAE Wealth Management",
+    "type": "groupchat",
+    "agents": [
+      "Casey",
+      "Genny",
+      "Optimus"
+    ],
+    "max_rounds": 10,
+    "speaker_selection_method": "round_robin",
+    "termination_condition": "all_agents_agree"
+  },
+  "NAE_Full_System": {
+    "name": "NAE Full System",
+    "type": "groupchat",
+    "agents": [
+      "Casey",
+      "Optimus",
+      "Ralph",
+      "Donnie",
+      "Genny"
+    ],
+    "max_rounds": 10,
+    "speaker_selection_method": "round_robin",
+    "termination_condition": "all_agents_agree"
+  }
+}

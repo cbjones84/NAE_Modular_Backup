@@ -1,0 +1,88 @@
+{
+  "enabled": true,
+  "description": "Polymarket prediction market trading configuration for NAE",
+  
+  "api": {
+    "gamma_api": "https://gamma-api.polymarket.com",
+    "clob_api": "https://clob.polymarket.com",
+    "api_key": "FROM_VAULT",
+    "api_secret": "FROM_VAULT",
+    "api_passphrase": "FROM_VAULT"
+  },
+  
+  "wallet": {
+    "address": "FROM_VAULT",
+    "private_key": "FROM_VAULT",
+    "chain_id": 137,
+    "chain_name": "Polygon Mainnet"
+  },
+  
+  "trading": {
+    "mode": "live",
+    "risk_tolerance": "MODERATE",
+    "max_position_size_usd": 1000.0,
+    "max_daily_trades": 20,
+    "min_liquidity": 2000.0,
+    "strategies": {
+      "bonding": {
+        "enabled": true,
+        "min_probability": 0.95,
+        "max_days_to_resolution": 14,
+        "min_annualized_return": 50.0,
+        "max_position_pct": 0.10
+      },
+      "semantic": {
+        "enabled": true,
+        "min_confidence": 0.60,
+        "min_edge": 0.10,
+        "topics": ["politics", "crypto", "sports", "economics"]
+      },
+      "arbitrage": {
+        "enabled": false,
+        "min_spread": 0.03,
+        "platforms": ["polymarket", "kalshi"]
+      },
+      "liquidity": {
+        "enabled": false,
+        "target_spread": 0.02,
+        "max_inventory": 5000
+      }
+    }
+  },
+  
+  "risk_management": {
+    "max_total_exposure_usd": 10000.0,
+    "max_single_market_exposure_pct": 0.20,
+    "daily_loss_limit_usd": 500.0,
+    "stop_loss_pct": 0.50,
+    "take_profit_pct": 0.25
+  },
+  
+  "profit_allocation": {
+    "enabled": true,
+    "route_to_shredder": true,
+    "allocation_frequency": "daily",
+    "min_profit_to_allocate": 10.0
+  },
+  
+  "monitoring": {
+    "log_level": "INFO",
+    "alert_on_large_loss": true,
+    "large_loss_threshold": 100.0,
+    "report_frequency": "daily"
+  },
+  
+  "growth_milestones": {
+    "year_1": 9411,
+    "year_2": 44110,
+    "year_3": 152834,
+    "year_4": 388657,
+    "year_5": 982500,
+    "year_6": 2477897,
+    "year_7": 6243561,
+    "year_8": 15726144
+  },
+  
+  "last_updated": "2026-01-06T00:00:00Z"
+}
+

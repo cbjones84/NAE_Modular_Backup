@@ -1,0 +1,41 @@
+{
+  "strategy_name": "Iron Condor",
+  "source": "High Probability Options Setups",
+  "description": "Sell OTM put spread + OTM call spread for premium",
+  "parameters": {
+    "entry_rules": [
+      "IV Rank > 50",
+      "30-45 DTE",
+      "Sell 0.15-0.20 delta strikes",
+      "Range-bound market expected"
+    ],
+    "exit_rules": [
+      "Close at 50% profit",
+      "Close at 21 DTE if not profitable",
+      "Roll tested side if challenged"
+    ],
+    "risk_rules": [
+      "Max loss = width - premium",
+      "1-2% account risk per condor",
+      "Don't hold through earnings"
+    ],
+    "position_sizing": "Risk 1-2% of account per position"
+  },
+  "metrics": {
+    "expected_win_rate": 0.7,
+    "expected_rr": 0.4,
+    "edge_source": "Volatility risk premium + theta"
+  },
+  "risk_profile": {
+    "bias_risks": [
+      "Overconfidence in range",
+      "Not adjusting when wrong"
+    ],
+    "safety_constraints": [
+      "Liquid underlyings only",
+      "Wide enough wings"
+    ]
+  },
+  "created_at": "2025-12-02T16:13:06.007387",
+  "created_by": "Ralph Learning Pipeline"
+}

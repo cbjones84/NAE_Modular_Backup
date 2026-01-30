@@ -1,0 +1,91 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: nae_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    networks:
+      - nae_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  shredder:
+    build:
+      context: ./docker/shredder
+      dockerfile: Dockerfile
+    container_name: shredder_agent
+    env_file:
+      - ./docker/shredder/.env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - NAE_ENVIRONMENT=sandbox
+    volumes:
+      - ./logs:/app/logs
+      - ./agents:/app/agents
+      - ./config:/app/config
+    restart: unless-stopped
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - nae_network
+
+  optimus:
+    build:
+      context: .
+      dockerfile: Dockerfile.optimus
+    container_name: optimus_agent
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - NAE_ENVIRONMENT=sandbox
+      - TRADING_MODE=sandbox
+    volumes:
+      - ./logs:/app/logs
+      - ./agents:/app/agents
+      - ./config:/app/config
+    restart: unless-stopped
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - nae_network
+    ports:
+      - "8006:8006"
+
+  ralph:
+    build:
+      context: .
+      dockerfile: Dockerfile.ralph
+    container_name: ralph_agent
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - NAE_ENVIRONMENT=sandbox
+    volumes:
+      - ./logs:/app/logs
+      - ./agents:/app/agents
+      - ./config:/app/config
+    restart: unless-stopped
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - nae_network
+    ports:
+      - "8007:8007"
+
+volumes:
+  redis_data:
+
+networks:
+  nae_network:
+    driver: bridge
+

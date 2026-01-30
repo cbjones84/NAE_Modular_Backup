@@ -1,0 +1,43 @@
+{
+  "predictions": [
+    {
+      "prediction_id": "pred_KXTEST-FED-RATE_20260106164927",
+      "market_ticker": "KXTEST-FED-RATE",
+      "market_title": "Fed Rate Decision Test",
+      "category": "economics",
+      "predicted_probability": 0.82,
+      "market_price": 0.75,
+      "side": "yes",
+      "strategy": "bonding",
+      "confidence": 0.7,
+      "timestamp": "2026-01-06T16:49:27.216815",
+      "resolved": true,
+      "actual_outcome": true,
+      "resolution_timestamp": "2026-01-06T16:49:27.217316",
+      "pnl_cents": 350
+    }
+  ],
+  "strategy_performance": {
+    "bonding": {
+      "strategy_name": "bonding",
+      "total_predictions": 1,
+      "correct_predictions": 1,
+      "total_pnl_cents": 350,
+      "avg_confidence": 0.7,
+      "avg_brier_score": 0.03240000000000002,
+      "win_rate": 1.0,
+      "last_updated": "2026-01-06T16:49:27.217341"
+    }
+  },
+  "category_performance": {
+    "economics": {
+      "category": "economics",
+      "total_predictions": 1,
+      "correct_predictions": 1,
+      "avg_brier_score": 0.03240000000000002,
+      "calibration_score": 0.5,
+      "recommended_confidence_adjustment": 1.0
+    }
+  },
+  "last_updated": "2026-01-06T16:49:27.217484"
+}

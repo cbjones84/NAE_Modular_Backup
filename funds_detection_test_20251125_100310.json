@@ -1,0 +1,33 @@
+{
+  "timestamp": "2025-11-25T10:03:08.907925",
+  "tests": {
+    "adapter_init": {
+      "status": "PASS"
+    },
+    "authentication": {
+      "status": "PASS"
+    },
+    "get_account": {
+      "status": "PASS",
+      "account_id": "6YB66744"
+    },
+    "get_balance": {
+      "status": "PASS",
+      "total_equity": 0,
+      "cash": 0,
+      "buying_power": 0
+    },
+    "funds_detection": {
+      "status": "PASS",
+      "funds_detected": false,
+      "amount": 0.0,
+      "note": "System correctly detects zero balance"
+    },
+    "threshold_detection": {
+      "status": "PASS",
+      "threshold": 100.0,
+      "current_funds": 0,
+      "activation_status": "WAITING"
+    }
+  }
+}

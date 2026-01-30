@@ -1,0 +1,41 @@
+{
+  "strategy_name": "Credit Spread",
+  "source": "High Probability Options Setups",
+  "description": "Sell OTM option, buy further OTM for protection",
+  "parameters": {
+    "entry_rules": [
+      "Directional bias confirmed",
+      "IV Rank > 30",
+      "Sell 0.20-0.30 delta",
+      "30-45 DTE"
+    ],
+    "exit_rules": [
+      "Close at 50% profit",
+      "Close if underlying breaks through short strike",
+      "Close at 21 DTE"
+    ],
+    "risk_rules": [
+      "Max loss = width - credit",
+      "Risk 1% per spread",
+      "Max 5 spreads same direction"
+    ],
+    "position_sizing": "Width \u00d7 number of contracts \u2264 2% account"
+  },
+  "metrics": {
+    "expected_win_rate": 0.65,
+    "expected_rr": 0.5,
+    "edge_source": "Directional edge + premium collection"
+  },
+  "risk_profile": {
+    "bias_risks": [
+      "Fighting the trend",
+      "Adding to losers"
+    ],
+    "safety_constraints": [
+      "Trade with trend",
+      "Defined risk"
+    ]
+  },
+  "created_at": "2025-12-02T16:13:06.007387",
+  "created_by": "Ralph Learning Pipeline"
+}

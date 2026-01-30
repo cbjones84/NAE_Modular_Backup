@@ -1,0 +1,262 @@
+{
+  "version": "1.0",
+  "updated_at": "2025-12-02T16:13:05.998207",
+  "strategies": [
+    {
+      "name": "Kelly Criterion Position Sizing",
+      "source": "Kelly Criterion Concept",
+      "description": "Optimal position sizing using Kelly formula for maximum long-term growth",
+      "entry_rules": [
+        "Calculate win probability from backtest",
+        "Estimate average win/loss ratio"
+      ],
+      "exit_rules": [
+        "Exit based on original strategy rules"
+      ],
+      "risk_rules": [
+        "Never bet more than Kelly suggests",
+        "Use fractional Kelly (25-50%)"
+      ],
+      "position_sizing": "f* = (bp - q) / b where b=odds, p=win prob, q=loss prob",
+      "expected_win_rate": null,
+      "expected_rr": null,
+      "edge_source": "Mathematical optimization",
+      "bias_risks": [
+        "Overestimating win probability",
+        "Not accounting for correlation"
+      ],
+      "safety_constraints": [
+        "Max 25-50% of full Kelly",
+        "Requires accurate probability estimates"
+      ]
+    },
+    {
+      "name": "Wheel Strategy",
+      "source": "High Probability Options Setups",
+      "description": "Sell cash-secured puts, if assigned sell covered calls, repeat",
+      "entry_rules": [
+        "Select stocks you want to own at lower prices",
+        "Sell cash-secured puts at strike you'd buy stock",
+        "30-45 DTE optimal",
+        "IV Rank > 30"
+      ],
+      "exit_rules": [
+        "Let puts expire worthless or roll",
+        "If assigned, sell covered calls",
+        "Exit calls at 50% profit or expiration"
+      ],
+      "risk_rules": [
+        "Only on stocks you'd hold long-term",
+        "Size for assignment (have cash)",
+        "Don't wheel meme stocks"
+      ],
+      "position_sizing": "Cash to cover 100 shares at strike price",
+      "expected_win_rate": 0.75,
+      "expected_rr": 0.5,
+      "edge_source": "Theta decay + premium collection",
+      "bias_risks": [
+        "Anchoring to cost basis",
+        "Not cutting losers"
+      ],
+      "safety_constraints": [
+        "Quality stocks only",
+        "Max 20% in single name"
+      ]
+    },
+    {
+      "name": "Iron Condor",
+      "source": "High Probability Options Setups",
+      "description": "Sell OTM put spread + OTM call spread for premium",
+      "entry_rules": [
+        "IV Rank > 50",
+        "30-45 DTE",
+        "Sell 0.15-0.20 delta strikes",
+        "Range-bound market expected"
+      ],
+      "exit_rules": [
+        "Close at 50% profit",
+        "Close at 21 DTE if not profitable",
+        "Roll tested side if challenged"
+      ],
+      "risk_rules": [
+        "Max loss = width - premium",
+        "1-2% account risk per condor",
+        "Don't hold through earnings"
+      ],
+      "position_sizing": "Risk 1-2% of account per position",
+      "expected_win_rate": 0.7,
+      "expected_rr": 0.4,
+      "edge_source": "Volatility risk premium + theta",
+      "bias_risks": [
+        "Overconfidence in range",
+        "Not adjusting when wrong"
+      ],
+      "safety_constraints": [
+        "Liquid underlyings only",
+        "Wide enough wings"
+      ]
+    },
+    {
+      "name": "Credit Spread",
+      "source": "High Probability Options Setups",
+      "description": "Sell OTM option, buy further OTM for protection",
+      "entry_rules": [
+        "Directional bias confirmed",
+        "IV Rank > 30",
+        "Sell 0.20-0.30 delta",
+        "30-45 DTE"
+      ],
+      "exit_rules": [
+        "Close at 50% profit",
+        "Close if underlying breaks through short strike",
+        "Close at 21 DTE"
+      ],
+      "risk_rules": [
+        "Max loss = width - credit",
+        "Risk 1% per spread",
+        "Max 5 spreads same direction"
+      ],
+      "position_sizing": "Width \u00d7 number of contracts \u2264 2% account",
+      "expected_win_rate": 0.65,
+      "expected_rr": 0.5,
+      "edge_source": "Directional edge + premium collection",
+      "bias_risks": [
+        "Fighting the trend",
+        "Adding to losers"
+      ],
+      "safety_constraints": [
+        "Trade with trend",
+        "Defined risk"
+      ]
+    }
+  ],
+  "core_concepts": {
+    "greeks": {
+      "delta": "Price sensitivity to underlying",
+      "gamma": "Rate of delta change",
+      "theta": "Time decay per day",
+      "vega": "Sensitivity to IV changes"
+    },
+    "strategy_selection": {
+      "high_iv": [
+        "iron_condor",
+        "credit_spread",
+        "wheel"
+      ],
+      "low_iv": [
+        "debit_spread",
+        "long_options"
+      ],
+      "bullish": [
+        "bull_put_spread",
+        "covered_call"
+      ],
+      "bearish": [
+        "bear_call_spread",
+        "put_spread"
+      ],
+      "neutral": [
+        "iron_condor",
+        "iron_butterfly"
+      ]
+    },
+    "position_sizing": {
+      "method": "Kelly Criterion",
+      "max_risk_per_trade": 0.02,
+      "kelly_fraction": 0.25
+    }
+  },
+  "risk_rules": [
+    {
+      "name": "Per-Trade Risk Limit",
+      "source": "Risk Management Framework",
+      "description": "Never risk more than 1-2% of capital per trade",
+      "trigger": "Before entering any trade",
+      "action": "Calculate position size to limit loss to 1-2% of capital",
+      "parameters": {
+        "max_risk_pct": 0.02,
+        "preferred_risk_pct": 0.01
+      }
+    },
+    {
+      "name": "Portfolio Heat Limit",
+      "source": "Risk Management Framework",
+      "description": "Total portfolio risk under 6% at any time",
+      "trigger": "Before adding new positions",
+      "action": "Sum all position risks, reject if exceeds 6%",
+      "parameters": {
+        "max_portfolio_risk": 0.06
+      }
+    },
+    {
+      "name": "Drawdown Reduction",
+      "source": "Risk Management Framework",
+      "description": "Reduce size after drawdowns",
+      "trigger": "Account drawdown exceeds threshold",
+      "action": "Reduce position sizes proportionally",
+      "parameters": {
+        "reduce_at_10pct": 0.5,
+        "stop_at_20pct": 0.0,
+        "review_at_25pct": "full_stop"
+      }
+    },
+    {
+      "name": "Daily Loss Limit",
+      "source": "Common Trading Mistakes",
+      "description": "Stop trading after daily loss limit",
+      "trigger": "Daily P&L exceeds loss limit",
+      "action": "Close all positions, no new trades today",
+      "parameters": {
+        "daily_loss_limit_pct": 0.03
+      }
+    },
+    {
+      "name": "Consecutive Loss Limit",
+      "source": "Trading Psychology Fundamentals",
+      "description": "Take break after consecutive losses",
+      "trigger": "3+ consecutive losing trades",
+      "action": "Stop trading for rest of day, review trades",
+      "parameters": {
+        "max_consecutive_losses": 3
+      }
+    },
+    {
+      "name": "Correlation Check",
+      "source": "Risk Management Framework",
+      "description": "Check correlation before adding positions",
+      "trigger": "Adding new position",
+      "action": "Reject if highly correlated with existing positions",
+      "parameters": {
+        "max_correlation": 0.7
+      }
+    },
+    {
+      "name": "Volatility Regime Adjustment",
+      "source": "Volatility Trading Concepts",
+      "description": "Adjust sizing based on VIX regime",
+      "trigger": "VIX level change",
+      "action": "Scale position sizes by regime",
+      "parameters": {
+        "low_vol": {
+          "vix_below": 15,
+          "size_multiplier": 1.2
+        },
+        "normal": {
+          "vix_range": [
+            15,
+            25
+          ],
+          "size_multiplier": 1.0
+        },
+        "high_vol": {
+          "vix_above": 25,
+          "size_multiplier": 0.5
+        },
+        "crisis": {
+          "vix_above": 40,
+          "size_multiplier": 0.0
+        }
+      }
+    }
+  ]
+}

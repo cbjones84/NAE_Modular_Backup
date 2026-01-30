@@ -1,0 +1,27 @@
+{
+  "api_endpoint": "https://api.ledgerwallet.com",
+  "wallet_addresses": {
+    "ethereum": "0xa1956A1db663a88e842e15813132fC17139c5584",
+    "bitcoin": "DBo8dx9SwpfFirJdi1JKMyvh6yewGbE6Wk"
+  },
+  "supported_coins": [
+    "bitcoin",
+    "ethereum",
+    "litecoin",
+    "bitcoin_cash"
+  ],
+  "exchange_apis": {
+    "binance": {
+      "api_key": "demo_binance_key",
+      "secret": "demo_binance_secret"
+    },
+    "coinbase": {
+      "api_key": "demo_coinbase_key",
+      "secret": "demo_coinbase_secret"
+    },
+    "kraken": {
+      "api_key": "",
+      "secret": ""
+    }
+  }
+}

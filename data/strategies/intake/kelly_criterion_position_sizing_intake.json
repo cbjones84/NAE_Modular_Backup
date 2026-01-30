@@ -1,0 +1,36 @@
+{
+  "strategy_name": "Kelly Criterion Position Sizing",
+  "source": "Kelly Criterion Concept",
+  "description": "Optimal position sizing using Kelly formula for maximum long-term growth",
+  "parameters": {
+    "entry_rules": [
+      "Calculate win probability from backtest",
+      "Estimate average win/loss ratio"
+    ],
+    "exit_rules": [
+      "Exit based on original strategy rules"
+    ],
+    "risk_rules": [
+      "Never bet more than Kelly suggests",
+      "Use fractional Kelly (25-50%)"
+    ],
+    "position_sizing": "f* = (bp - q) / b where b=odds, p=win prob, q=loss prob"
+  },
+  "metrics": {
+    "expected_win_rate": null,
+    "expected_rr": null,
+    "edge_source": "Mathematical optimization"
+  },
+  "risk_profile": {
+    "bias_risks": [
+      "Overestimating win probability",
+      "Not accounting for correlation"
+    ],
+    "safety_constraints": [
+      "Max 25-50% of full Kelly",
+      "Requires accurate probability estimates"
+    ]
+  },
+  "created_at": "2025-12-02T16:13:06.007387",
+  "created_by": "Ralph Learning Pipeline"
+}

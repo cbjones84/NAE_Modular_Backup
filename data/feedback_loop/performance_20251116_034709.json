@@ -1,0 +1,34 @@
+{
+  "timestamp": "2025-11-16T03:47:09.454279",
+  "agents": {
+    "Optimus": {
+      "nav": 25.0,
+      "daily_pnl": 0.0,
+      "realized_pnl": 0.0,
+      "unrealized_pnl": 0.0,
+      "open_positions": 0,
+      "consecutive_losses": 0,
+      "risk_metrics": {
+        "daily_loss": 0.0,
+        "max_drawdown": 0.0,
+        "sharpe_ratio": 0.0,
+        "win_rate": 0.0
+      },
+      "current_phase": "Phase 1: Foundation (Tier 1: Wheel Strategy)",
+      "goal_progress": 0.0005
+    },
+    "Ralph": {
+      "approved_strategies": 10,
+      "candidate_pool_size": 0,
+      "status": "3 strategies ready for execution"
+    },
+    "Donnie": {
+      "execution_history_size": 0,
+      "candidate_strategies": 0
+    }
+  },
+  "trading": {
+    "recent_trades": []
+  },
+  "system": {}
+}

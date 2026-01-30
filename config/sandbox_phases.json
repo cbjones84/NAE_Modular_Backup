@@ -1,0 +1,55 @@
+{
+  "phase_1": {
+    "name": "LIVE Trading - VERY_AGGRESSIVE",
+    "description": "LIVE trading with Tradier - VERY_AGGRESSIVE mode for $5M goal",
+    "duration_days": 365,
+    "trading_enabled": true,
+    "trading_mode": "live",
+    "broker": "tradier",
+    "aggressiveness": "VERY_AGGRESSIVE",
+    "risk_adjustment_factor": 1.5,
+    "max_order_size_usd": 50000,
+    "max_order_size_pct_nav": 0.50,
+    "allowed_symbols": "all",
+    "risk_limits": {
+      "daily_loss_limit_pct": 0.50,
+      "max_open_positions": 30,
+      "consecutive_loss_limit": 10
+    },
+    "monitoring": {
+      "log_level": "INFO",
+      "audit_all_actions": true,
+      "require_manual_approval": false
+    }
+  },
+  "current_phase": "phase_1",
+  "phase_start_date": "2026-01-06T00:00:00Z",
+  "phase_progression_rules": {
+    "auto_advance": false,
+    "requires_manual_approval": false,
+    "notes": "NAE is configured for LIVE trading only. No sandbox or paper trading phases."
+  },
+  "configuration": {
+    "broker": "tradier",
+    "mode": "LIVE",
+    "aggressiveness": "VERY_AGGRESSIVE",
+    "risk_adjustment_factor": 1.5,
+    "notes": "Alpaca and IBKR have been removed. Tradier is the ONLY broker."
+  },
+  "growth_milestones": {
+    "year_1": 9411,
+    "year_2": 44110,
+    "year_3": 152834,
+    "year_4": 388657,
+    "year_5": 982500,
+    "year_6": 2477897,
+    "year_7": 6243561,
+    "year_8": 15726144
+  },
+  "goals": {
+    "primary_target": 5000000.00,
+    "stretch_goal": 15726144.00,
+    "description": "Year 7 exceeds $5M target, Year 8 reaches $15.7M stretch goal"
+  },
+  "last_updated": "2026-01-06T00:00:00Z"
+}

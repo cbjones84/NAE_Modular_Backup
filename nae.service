@@ -1,0 +1,17 @@
+[Unit]
+Description=Neural Agency Engine - Automated Trading System
+After=network.target
+
+[Service]
+Type=simple
+User=%USER%
+WorkingDirectory=/path/to/NAE
+ExecStart=/usr/bin/python3 /path/to/NAE/nae_automation.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+

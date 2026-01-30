@@ -1,0 +1,208 @@
+{
+  "version": "1.0",
+  "updated_at": "2025-12-02T16:13:06.002748",
+  "insights": [
+    {
+      "concept": "Loss Aversion",
+      "source": "Trading Psychology Fundamentals",
+      "description": "Losses feel 2x more painful than equivalent gains",
+      "bias_type": "cognitive",
+      "trigger_conditions": [
+        "Position is losing",
+        "Unrealized loss visible"
+      ],
+      "mitigation_strategies": [
+        "Use mechanical stop losses",
+        "Predefined exit rules",
+        "Size positions to accept loss"
+      ],
+      "discipline_rules": [
+        "Set stop before entry",
+        "Never move stop against position"
+      ]
+    },
+    {
+      "concept": "Confirmation Bias",
+      "source": "Trading Psychology Fundamentals",
+      "description": "Seeking information that confirms existing beliefs",
+      "bias_type": "cognitive",
+      "trigger_conditions": [
+        "Strong conviction in position",
+        "Looking for validation"
+      ],
+      "mitigation_strategies": [
+        "Actively seek contrary evidence",
+        "Devil's advocate analysis"
+      ],
+      "discipline_rules": [
+        "List reasons NOT to take trade",
+        "Review contrary indicators"
+      ]
+    },
+    {
+      "concept": "Overconfidence",
+      "source": "Trading Psychology Fundamentals",
+      "description": "Believing you're better than average trader",
+      "bias_type": "cognitive",
+      "trigger_conditions": [
+        "Recent winning streak",
+        "Early success"
+      ],
+      "mitigation_strategies": [
+        "Track actual statistics",
+        "Use Kelly criterion"
+      ],
+      "discipline_rules": [
+        "Never exceed position size limits",
+        "Review performance monthly"
+      ]
+    },
+    {
+      "concept": "FOMO",
+      "source": "Trading Psychology Fundamentals",
+      "description": "Fear of missing out on moves",
+      "bias_type": "emotional",
+      "trigger_conditions": [
+        "Big market move without you",
+        "Others making money"
+      ],
+      "mitigation_strategies": [
+        "Predefined entry criteria",
+        "Accept missing some moves"
+      ],
+      "discipline_rules": [
+        "Wait for your setup",
+        "No chasing",
+        "There's always another trade"
+      ]
+    },
+    {
+      "concept": "Revenge Trading",
+      "source": "Trading Psychology Fundamentals",
+      "description": "Trying to recover losses immediately",
+      "bias_type": "emotional",
+      "trigger_conditions": [
+        "After a loss",
+        "Feeling frustrated"
+      ],
+      "mitigation_strategies": [
+        "Daily loss limits",
+        "Mandatory breaks after losses"
+      ],
+      "discipline_rules": [
+        "Stop after 3 consecutive losses",
+        "Walk away for 30 minutes after big loss"
+      ]
+    },
+    {
+      "concept": "Recency Bias",
+      "source": "Trading Psychology Fundamentals",
+      "description": "Overweighting recent events in decision making",
+      "bias_type": "cognitive",
+      "trigger_conditions": [
+        "Recent market event",
+        "Last few trades"
+      ],
+      "mitigation_strategies": [
+        "Use longer-term data",
+        "Statistical thinking"
+      ],
+      "discipline_rules": [
+        "Review 100+ trade history",
+        "Ignore last 5 trades for sizing"
+      ]
+    }
+  ],
+  "discipline_framework": {
+    "pre_trade_checklist": [
+      "Is this in my trading plan?",
+      "Do I have a clear entry, stop, and target?",
+      "Am I trading with the trend?",
+      "Is position size appropriate?",
+      "Am I emotionally neutral?"
+    ],
+    "post_trade_review": [
+      "Did I follow my plan?",
+      "Was the entry/exit optimal?",
+      "What can I learn from this trade?",
+      "Any emotional decisions?"
+    ],
+    "daily_discipline": [
+      "Review overnight news before trading",
+      "Check open positions and P&L",
+      "Set daily risk limits",
+      "Take breaks every 2 hours",
+      "End-of-day journaling"
+    ]
+  },
+  "bias_triggers_and_responses": {
+    "Loss Aversion": {
+      "triggers": [
+        "Position is losing",
+        "Unrealized loss visible"
+      ],
+      "responses": [
+        "Use mechanical stop losses",
+        "Predefined exit rules",
+        "Size positions to accept loss"
+      ]
+    },
+    "Confirmation Bias": {
+      "triggers": [
+        "Strong conviction in position",
+        "Looking for validation"
+      ],
+      "responses": [
+        "Actively seek contrary evidence",
+        "Devil's advocate analysis"
+      ]
+    },
+    "Overconfidence": {
+      "triggers": [
+        "Recent winning streak",
+        "Early success"
+      ],
+      "responses": [
+        "Track actual statistics",
+        "Use Kelly criterion"
+      ]
+    },
+    "FOMO": {
+      "triggers": [
+        "Big market move without you",
+        "Others making money"
+      ],
+      "responses": [
+        "Predefined entry criteria",
+        "Accept missing some moves"
+      ]
+    },
+    "Revenge Trading": {
+      "triggers": [
+        "After a loss",
+        "Feeling frustrated"
+      ],
+      "responses": [
+        "Daily loss limits",
+        "Mandatory breaks after losses"
+      ]
+    },
+    "Recency Bias": {
+      "triggers": [
+        "Recent market event",
+        "Last few trades"
+      ],
+      "responses": [
+        "Use longer-term data",
+        "Statistical thinking"
+      ]
+    }
+  },
+  "emotional_state_rules": {
+    "frustrated": "Stop trading, take 30 min break",
+    "overconfident": "Reduce position size 50%",
+    "fearful": "Review stats, stick to plan",
+    "excited": "Wait 5 minutes before entry",
+    "revenge_mode": "Stop for the day"
+  }
+}

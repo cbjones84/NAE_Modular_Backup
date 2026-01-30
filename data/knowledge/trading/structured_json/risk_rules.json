@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Per-Trade Risk Limit",
+    "source": "Risk Management Framework",
+    "description": "Never risk more than 1-2% of capital per trade",
+    "trigger": "Before entering any trade",
+    "action": "Calculate position size to limit loss to 1-2% of capital",
+    "parameters": {
+      "max_risk_pct": 0.02,
+      "preferred_risk_pct": 0.01
+    }
+  },
+  {
+    "name": "Portfolio Heat Limit",
+    "source": "Risk Management Framework",
+    "description": "Total portfolio risk under 6% at any time",
+    "trigger": "Before adding new positions",
+    "action": "Sum all position risks, reject if exceeds 6%",
+    "parameters": {
+      "max_portfolio_risk": 0.06
+    }
+  },
+  {
+    "name": "Drawdown Reduction",
+    "source": "Risk Management Framework",
+    "description": "Reduce size after drawdowns",
+    "trigger": "Account drawdown exceeds threshold",
+    "action": "Reduce position sizes proportionally",
+    "parameters": {
+      "reduce_at_10pct": 0.5,
+      "stop_at_20pct": 0.0,
+      "review_at_25pct": "full_stop"
+    }
+  },
+  {
+    "name": "Daily Loss Limit",
+    "source": "Common Trading Mistakes",
+    "description": "Stop trading after daily loss limit",
+    "trigger": "Daily P&L exceeds loss limit",
+    "action": "Close all positions, no new trades today",
+    "parameters": {
+      "daily_loss_limit_pct": 0.03
+    }
+  },
+  {
+    "name": "Consecutive Loss Limit",
+    "source": "Trading Psychology Fundamentals",
+    "description": "Take break after consecutive losses",
+    "trigger": "3+ consecutive losing trades",
+    "action": "Stop trading for rest of day, review trades",
+    "parameters": {
+      "max_consecutive_losses": 3
+    }
+  },
+  {
+    "name": "Correlation Check",
+    "source": "Risk Management Framework",
+    "description": "Check correlation before adding positions",
+    "trigger": "Adding new position",
+    "action": "Reject if highly correlated with existing positions",
+    "parameters": {
+      "max_correlation": 0.7
+    }
+  },
+  {
+    "name": "Volatility Regime Adjustment",
+    "source": "Volatility Trading Concepts",
+    "description": "Adjust sizing based on VIX regime",
+    "trigger": "VIX level change",
+    "action": "Scale position sizes by regime",
+    "parameters": {
+      "low_vol": {
+        "vix_below": 15,
+        "size_multiplier": 1.2
+      },
+      "normal": {
+        "vix_range": [
+          15,
+          25
+        ],
+        "size_multiplier": 1.0
+      },
+      "high_vol": {
+        "vix_above": 25,
+        "size_multiplier": 0.5
+      },
+      "crisis": {
+        "vix_above": 40,
+        "size_multiplier": 0.0
+      }
+    }
+  }
+]

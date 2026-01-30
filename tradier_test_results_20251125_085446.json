@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-11-25T08:54:46.009840",
+  "sandbox": false,
+  "tests": {
+    "initialize": {
+      "status": "PASS",
+      "api_key_auth": true,
+      "oauth_auth": false
+    },
+    "authenticate": {
+      "status": "PASS",
+      "auth_method": "API_KEY"
+    },
+    "get_accounts": {
+      "status": "FAIL",
+      "error": "404 Client Error: Not found for url: https://api.tradier.com/v1/accounts"
+    },
+    "adapter_status": {
+      "status": "PASS",
+      "details": {
+        "broker": "tradier",
+        "sandbox": false,
+        "account_id": null,
+        "authenticated": true,
+        "token_expired": false,
+        "websocket_connected": false,
+        "pending_orders": 0
+      }
+    }
+  }
+}

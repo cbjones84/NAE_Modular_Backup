@@ -1,0 +1,27 @@
+{
+  "category_scores": {
+    "economics": 0.73,
+    "politics": 0.6,
+    "weather": 0.5,
+    "finance": 0.65,
+    "science": 0.4,
+    "entertainment": 0.5
+  },
+  "strategy_scores": {
+    "bonding": 0.8200000000000001,
+    "arbitrage": 0.75,
+    "superforecast": 0.6,
+    "semantic": 0.55,
+    "event_driven": 0.65
+  },
+  "training_data": [
+    {
+      "category": "economics",
+      "strategy": "bonding",
+      "was_profitable": true,
+      "signal_score": 0.5,
+      "timestamp": "2026-01-06T16:49:27.218751"
+    }
+  ],
+  "last_updated": "2026-01-06T16:49:27.218824"
+}

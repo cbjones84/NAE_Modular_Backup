@@ -1,0 +1,28 @@
+﻿Account Balances:
+{
+  "balances": {
+    "option_short_value": 0,
+    "total_equity": 100.13,
+    "account_number": "6YB66744",
+    "account_type": "cash",
+    "close_pl": 0,
+    "current_requirement": 0,
+    "equity": 0,
+    "long_market_value": 44.53,
+    "market_value": 44.53,
+    "open_pl": 0.445,
+    "option_long_value": 0,
+    "option_requirement": 0,
+    "pending_orders_count": 0,
+    "short_market_value": 0,
+    "stock_long_value": 44.53,
+    "total_cash": 55.6,
+    "uncleared_funds": 0,
+    "pending_cash": 0,
+    "cash": {
+      "cash_available": 55.6,
+      "sweep": 0,
+      "unsettled_funds": 42.4383
+    }
+  }
+}

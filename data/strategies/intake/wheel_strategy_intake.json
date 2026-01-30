@@ -1,0 +1,41 @@
+{
+  "strategy_name": "Wheel Strategy",
+  "source": "High Probability Options Setups",
+  "description": "Sell cash-secured puts, if assigned sell covered calls, repeat",
+  "parameters": {
+    "entry_rules": [
+      "Select stocks you want to own at lower prices",
+      "Sell cash-secured puts at strike you'd buy stock",
+      "30-45 DTE optimal",
+      "IV Rank > 30"
+    ],
+    "exit_rules": [
+      "Let puts expire worthless or roll",
+      "If assigned, sell covered calls",
+      "Exit calls at 50% profit or expiration"
+    ],
+    "risk_rules": [
+      "Only on stocks you'd hold long-term",
+      "Size for assignment (have cash)",
+      "Don't wheel meme stocks"
+    ],
+    "position_sizing": "Cash to cover 100 shares at strike price"
+  },
+  "metrics": {
+    "expected_win_rate": 0.75,
+    "expected_rr": 0.5,
+    "edge_source": "Theta decay + premium collection"
+  },
+  "risk_profile": {
+    "bias_risks": [
+      "Anchoring to cost basis",
+      "Not cutting losers"
+    ],
+    "safety_constraints": [
+      "Quality stocks only",
+      "Max 20% in single name"
+    ]
+  },
+  "created_at": "2025-12-02T16:13:06.007387",
+  "created_by": "Ralph Learning Pipeline"
+}

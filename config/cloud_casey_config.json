@@ -1,0 +1,33 @@
+{
+  "cloud_deployment": {
+    "deployment_type": "aws_lambda",
+    "region": "us-east-1",
+    "function_name": "cloud-casey-agent",
+    "timeout": 900,
+    "memory": 1024
+  },
+  "monitoring": {
+    "analysis_interval": 3600,
+    "health_check_interval": 300,
+    "code_analysis_interval": 86400,
+    "report_generation_interval": 7200
+  },
+  "nae_integration": {
+    "github_repo": "your_username/neural-agency-engine",
+    "local_sync_enabled": true,
+    "remote_monitoring_enabled": true,
+    "backup_enabled": true
+  },
+  "analysis": {
+    "code_quality_threshold": 80,
+    "performance_threshold": 70,
+    "security_threshold": 90,
+    "maintainability_threshold": 75
+  },
+  "notifications": {
+    "email_enabled": true,
+    "slack_enabled": false,
+    "webhook_enabled": true,
+    "alert_threshold": 0.7
+  }
+}

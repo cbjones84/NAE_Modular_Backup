@@ -1,0 +1,66 @@
+{
+  "timestamp": "2025-11-25T09:45:15.473018",
+  "sandbox": false,
+  "tests": {
+    "initialize": {
+      "status": "PASS",
+      "api_key_auth": true,
+      "oauth_auth": false
+    },
+    "authenticate": {
+      "status": "PASS",
+      "auth_method": "API_KEY"
+    },
+    "get_accounts": {
+      "status": "PASS",
+      "account_count": 1,
+      "accounts": [
+        {
+          "account_number": "6YB66744",
+          "classification": "individual",
+          "date_created": "2025-11-21T17:51:04.000Z",
+          "day_trader": false,
+          "option_level": 2,
+          "status": "active",
+          "type": "cash",
+          "last_update_date": "2025-11-24T15:51:42.000Z"
+        }
+      ]
+    },
+    "get_account_details": {
+      "status": "PASS",
+      "account_id": "6YB66744"
+    },
+    "get_account_balance": {
+      "status": "PASS",
+      "account_id": "6YB66744",
+      "total_equity": 0,
+      "cash": 0,
+      "buying_power": 0
+    },
+    "get_positions": {
+      "status": "PASS",
+      "position_count": 0
+    },
+    "get_orders": {
+      "status": "PASS",
+      "order_count": 0
+    },
+    "order_preview": {
+      "status": "PASS",
+      "note": "Order preview completed successfully (no actual order placed)"
+    },
+    "adapter_status": {
+      "status": "PASS",
+      "details": {
+        "broker": "tradier",
+        "sandbox": false,
+        "account_id": null,
+        "authenticated": true,
+        "token_expired": false,
+        "websocket_connected": false,
+        "pending_orders": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "polygon": {
+    "api_key": "YOUR_POLYGON_API_KEY_HERE",
+    "base_url": "https://api.polygon.io",
+    "rate_limit": 1000,
+    "description": "Polygon.io market data API for real-time and historical data"
+  },
+  "quantconnect": {
+    "user_id": "YOUR_QUANTCONNECT_USER_ID_HERE",
+    "api_key": "YOUR_QUANTCONNECT_API_KEY_HERE",
+    "base_url": "https://www.quantconnect.com/api/v2",
+    "description": "QuantConnect API for backtesting and live deployment"
+  },
+  "interactive_brokers": {
+    "api_key": "YOUR_IBKR_API_KEY_HERE",
+    "api_secret": "YOUR_IBKR_API_SECRET_HERE",
+    "paper_trading_url": "https://api.ibkr.com/v1/paper",
+    "live_trading_url": "https://api.ibkr.com/v1",
+    "rate_limit": 200,
+    "description": "Interactive Brokers API for live trading execution"
+  },
+  "alpaca": {
+    "api_key": "YOUR_ALPACA_API_KEY_HERE",
+    "api_secret": "YOUR_ALPACA_API_SECRET_HERE",
+    "paper_trading_url": "https://paper-api.alpaca.markets",
+    "live_trading_url": "https://api.alpaca.markets",
+    "rate_limit": 200,
+    "description": "Alpaca API for paper and live trading",
+    "endpoint": "https://api.alpaca.markets/v2"
+  },
+  "etrade": {
+    "sandbox_api_key": "STORED_IN_VAULT",
+    "sandbox_api_secret": "STORED_IN_VAULT",
+    "prod_api_key": "STORED_IN_VAULT",
+    "prod_api_secret": "STORED_IN_VAULT",
+    "sandbox_base_url": "https://apisb.etrade.com",
+    "prod_base_url": "https://api.etrade.com",
+    "rate_limit": 120,
+    "description": "E*Trade API for sandbox and live trading (OAuth 1.0a required)"
+  },
+  "twitter": {
+    "bearer_token": "YOUR_TWITTER_BEARER_TOKEN_HERE",
+    "api_key": "YOUR_TWITTER_API_KEY_HERE",
+    "api_secret": "YOUR_TWITTER_API_SECRET_HERE",
+    "rate_limit": 300,
+    "description": "Twitter API for trading insights and sentiment"
+  },
+  "reddit": {
+    "client_id": "YOUR_REDDIT_CLIENT_ID_HERE",
+    "client_secret": "YOUR_REDDIT_CLIENT_SECRET_HERE",
+    "user_agent": "NAE Trading Bot 1.0",
+    "rate_limit": 60,
+    "description": "Reddit API for trading discussions and strategies"
+  },
+  "discord": {
+    "bot_token": "YOUR_DISCORD_BOT_TOKEN_HERE",
+    "rate_limit": 50,
+    "description": "Discord API for trading channel monitoring"
+  },
+  "news_api": {
+    "api_key": "YOUR_NEWS_API_KEY_HERE",
+    "rate_limit": 1000,
+    "description": "News API for financial news and market insights"
+  },
+  "marketaux": {
+    "api_key": "YOUR_MARKETAUX_API_KEY_HERE",
+    "rate_limit": 1000,
+    "description": "Marketaux API for financial news and market sentiment"
+  },
+  "tiingo": {
+    "api_key": "YOUR_TIINGO_API_KEY_HERE",
+    "rate_limit": 1000,
+    "description": "Tiingo API for real-time and historical market data, news, and fundamentals"
+  },
+  "alpha_vantage": {
+    "api_key": "YOUR_ALPHA_VANTAGE_API_KEY_HERE",
+    "rate_limit": 5,
+    "description": "Alpha Vantage API for market data and news sentiment"
+  },
+  "github": {
+    "api_token": "YOUR_GITHUB_PAT_HERE",
+    "rate_limit": 5000,
+    "description": "GitHub API for discovering trading tools, algorithms, and strategies from open-source repositories"
+  },
+  "kalshi": {
+    "api_key_id": "YOUR_KALSHI_API_KEY_ID_HERE",
+    "private_key": "YOUR_KALSHI_PRIVATE_KEY_HERE",
+    "base_url": "https://trading-api.kalshi.com/trade-api/v2",
+    "rate_limit": 100,
+    "description": "Kalshi API for prediction market trading"
+  },
+  "flowise": {
+    "api_key": "YOUR_FLOWISE_API_KEY_HERE",
+    "base_url": "http://localhost:3000/api/v1",
+    "description": "Flowise API for agent orchestration"
+  },
+  "environment": "sandbox",
+  "last_updated": "2025-01-27T00:00:00Z",
+  "notes": "Replace placeholder values with actual API keys. Keep this file secure and never commit real keys to version control."
+}

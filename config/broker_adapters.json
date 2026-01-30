@@ -1,0 +1,20 @@
+{
+  "default": "tradier",
+  "adapters": {
+    "tradier": {
+      "module": "execution.broker_adapters.tradier_adapter",
+      "class": "TradierBrokerAdapter",
+      "config": {
+        "sandbox": false,
+        "mode": "LIVE",
+        "api_key": "FROM_VAULT",
+        "account_id": "FROM_VAULT"
+      }
+    }
+  },
+  "notes": {
+    "broker": "Tradier is the ONLY broker for NAE",
+    "mode": "LIVE trading only - no paper/sandbox",
+    "removed": ["alpaca", "ibkr", "mock"]
+  }
+}

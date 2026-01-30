@@ -1,0 +1,41 @@
+# NAE Execution Layer Requirements
+
+# Signal Middleware
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+python-multipart>=0.0.6
+
+# Database
+psycopg2-binary>=2.9.9
+sqlalchemy>=2.0.0
+
+# Queue
+redis>=5.0.0
+
+# Monitoring
+prometheus-client>=0.19.0
+
+# HTTP Client
+requests>=2.31.0
+
+# WebSocket
+websocket-client>=1.6.0
+
+# Tradier (optional - install if using Tradier)
+# python-tradier>=1.0.0  # Optional: official Tradier Python library
+
+# Execution Engines (install based on selection)
+# LEAN: Install via Docker/DotNet SDK
+# pybroker>=1.0.0  # For QuantTrader/PyBroker
+# nautilus_trader>=1.0.0  # For NautilusTrader
+
+# Utilities
+python-dotenv>=1.0.0
+pyyaml>=6.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+httpx>=0.25.0
+

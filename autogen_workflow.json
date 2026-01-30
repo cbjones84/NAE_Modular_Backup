@@ -1,0 +1,10 @@
+{
+  "name": "NAE Casey Workflow",
+  "type": "groupchat",
+  "agents": [
+    "Casey",
+    "User"
+  ],
+  "max_rounds": 10,
+  "speaker_selection_method": "round_robin"
+}

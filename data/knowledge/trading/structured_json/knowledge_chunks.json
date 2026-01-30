@@ -1,0 +1,343 @@
+[
+  {
+    "id": "b3d770d4d747",
+    "source": "Investopedia Options Guide",
+    "source_type": "article",
+    "title": "Investopedia Options Guide",
+    "chapter": null,
+    "content": "[Content from https://www.investopedia.com/options-basics-tutorial-4583012]",
+    "topics": [
+      "options",
+      "basics",
+      "strategies"
+    ],
+    "relevance_scores": {
+      "options": 0.05,
+      "psychology": 0.0,
+      "risk": 0.05,
+      "volatility": 0.0,
+      "strategy": 0.0
+    },
+    "extracted_at": "2025-12-02T16:13:05.948236",
+    "metadata": {
+      "name": "Investopedia Options Guide",
+      "url": "https://www.investopedia.com/options-basics-tutorial-4583012",
+      "type": "article",
+      "topics": [
+        "options",
+        "basics",
+        "strategies"
+      ]
+    }
+  },
+  {
+    "id": "d03119a5eba0",
+    "source": "Investopedia Trading Psychology",
+    "source_type": "article",
+    "title": "Investopedia Trading Psychology",
+    "chapter": null,
+    "content": "[Content from https://www.investopedia.com/articles/trading/02/110502.asp]",
+    "topics": [
+      "psychology",
+      "discipline",
+      "emotions"
+    ],
+    "relevance_scores": {
+      "options": 0.0,
+      "psychology": 0.0,
+      "risk": 0.05,
+      "volatility": 0.0,
+      "strategy": 0.0
+    },
+    "extracted_at": "2025-12-02T16:13:05.948236",
+    "metadata": {
+      "name": "Investopedia Trading Psychology",
+      "url": "https://www.investopedia.com/articles/trading/02/110502.asp",
+      "type": "article",
+      "topics": [
+        "psychology",
+        "discipline",
+        "emotions"
+      ]
+    }
+  },
+  {
+    "id": "61edbb629cd3",
+    "source": "CBOE Options Education",
+    "source_type": "course",
+    "title": "CBOE Options Education",
+    "chapter": null,
+    "content": "[Content from https://www.cboe.com/education/]",
+    "topics": [
+      "options",
+      "volatility",
+      "strategies"
+    ],
+    "relevance_scores": {
+      "options": 0.0,
+      "psychology": 0.0,
+      "risk": 0.0,
+      "volatility": 0.0,
+      "strategy": 0.0
+    },
+    "extracted_at": "2025-12-02T16:13:05.948236",
+    "metadata": {
+      "name": "CBOE Options Education",
+      "url": "https://www.cboe.com/education/",
+      "type": "course",
+      "topics": [
+        "options",
+        "volatility",
+        "strategies"
+      ]
+    }
+  },
+  {
+    "id": "aba7a4cdd40e",
+    "source": "CME Group Education",
+    "source_type": "course",
+    "title": "CME Group Education",
+    "chapter": null,
+    "content": "[Content from https://www.cmegroup.com/education.html]",
+    "topics": [
+      "futures",
+      "options",
+      "risk"
+    ],
+    "relevance_scores": {
+      "options": 0.0,
+      "psychology": 0.0,
+      "risk": 0.0,
+      "volatility": 0.0,
+      "strategy": 0.0
+    },
+    "extracted_at": "2025-12-02T16:13:05.948236",
+    "metadata": {
+      "name": "CME Group Education",
+      "url": "https://www.cmegroup.com/education.html",
+      "type": "course",
+      "topics": [
+        "futures",
+        "options",
+        "risk"
+      ]
+    }
+  },
+  {
+    "id": "3e17f7a753a0",
+    "source": "Kelly Criterion",
+    "source_type": "concept",
+    "title": "Kelly Criterion",
+    "chapter": null,
+    "content": "\n        The Kelly Criterion is a mathematical formula for optimal position sizing:\n        f* = (bp - q) / b\n        Where:\n        - f* = fraction of capital to bet\n        - b = odds received on the bet (net profit if win / amount bet)\n        - p = probability of winning\n        - q = probability of losing (1 - p)\n        \n        Key principles:\n        1. Never bet more than Kelly suggests\n        2. Use fractional Kelly (25-50%) for safety\n        3. Requires accurate win probability estimates\n        4. Maximizes long-term geometric growth\n        5. Reduces risk of ruin to near zero\n        \n        Trading application:\n        - Calculate win rate from backtest\n        - Estimate average win/loss ratio\n        - Apply fractional Kelly for position sizing\n        - Adjust as strategy performance changes\n        ",
+    "topics": [
+      "position_sizing",
+      "risk",
+      "probability"
+    ],
+    "relevance_scores": {
+      "options": 0.0,
+      "psychology": 0.0,
+      "risk": 0.3,
+      "volatility": 0.05,
+      "strategy": 0.05
+    },
+    "extracted_at": "2025-12-02T16:13:05.948236",
+    "metadata": {
+      "name": "Kelly Criterion",
+      "type": "concept",
+      "content": "\n        The Kelly Criterion is a mathematical formula for optimal position sizing:\n        f* = (bp - q) / b\n        Where:\n        - f* = fraction of capital to bet\n        - b = odds received on the bet (net profit if win / amount bet)\n        - p = probability of winning\n        - q = probability of losing (1 - p)\n        \n        Key principles:\n        1. Never bet more than Kelly suggests\n        2. Use fractional Kelly (25-50%) for safety\n        3. Requires accurate win probability estimates\n        4. Maximizes long-term geometric growth\n        5. Reduces risk of ruin to near zero\n        \n        Trading application:\n        - Calculate win rate from backtest\n        - Estimate average win/loss ratio\n        - Apply fractional Kelly for position sizing\n        - Adjust as strategy performance changes\n        ",
+      "topics": [
+        "position_sizing",
+        "risk",
+        "probability"
+      ]
+    }
+  },
+  {
+    "id": "4c9e3409bac4",
+    "source": "Trading Psychology Fundamentals",
+    "source_type": "concept",
+    "title": "Trading Psychology Fundamentals",
+    "chapter": null,
+    "content": "\n        Core psychological biases in trading:\n        \n        1. LOSS AVERSION\n        - Losses feel 2x more painful than equivalent gains\n        - Causes: holding losers too long, cutting winners too short\n        - Solution: Use mechanical stop losses, predefined exit rules\n        \n        2. CONFIRMATION BIAS\n        - Seeking information that confirms existing beliefs\n        - Causes: ignoring contrary signals, overconfidence\n        - Solution: Actively seek disconfirming evidence\n        \n        3. OVERCONFIDENCE\n        - Believing you're better than average\n        - Causes: overtrading, excessive position sizes\n        - Solution: Track actual performance, use Kelly sizing\n        \n        4. RECENCY BIAS\n        - Overweighting recent events\n        - Causes: chasing hot strategies, panic selling\n        - Solution: Use longer-term statistical analysis\n        \n        5. FEAR OF MISSING OUT (FOMO)\n        - Impulsive entries on momentum\n        - Causes: buying tops, poor entries\n        - Solution: Predefined entry criteria, patience rules\n        \n        6. REVENGE TRADING\n        - Trying to recover losses immediately\n        - Causes: increased size, poor setups\n        - Solution: Daily loss limits, mandatory breaks\n        \n        Discipline Framework:\n        - Have a written trading plan\n        - Follow rules mechanically\n        - Review trades objectively\n        - Accept losses as cost of business\n        - Focus on process, not outcomes\n        ",
+    "topics": [
+      "psychology",
+      "biases",
+      "discipline"
+    ],
+    "relevance_scores": {
+      "options": 0.05,
+      "psychology": 0.25,
+      "risk": 0.45,
+      "volatility": 0.25,
+      "strategy": 0.25
+    },
+    "extracted_at": "2025-12-02T16:13:05.960931",
+    "metadata": {
+      "name": "Trading Psychology Fundamentals",
+      "type": "concept",
+      "content": "\n        Core psychological biases in trading:\n        \n        1. LOSS AVERSION\n        - Losses feel 2x more painful than equivalent gains\n        - Causes: holding losers too long, cutting winners too short\n        - Solution: Use mechanical stop losses, predefined exit rules\n        \n        2. CONFIRMATION BIAS\n        - Seeking information that confirms existing beliefs\n        - Causes: ignoring contrary signals, overconfidence\n        - Solution: Actively seek disconfirming evidence\n        \n        3. OVERCONFIDENCE\n        - Believing you're better than average\n        - Causes: overtrading, excessive position sizes\n        - Solution: Track actual performance, use Kelly sizing\n        \n        4. RECENCY BIAS\n        - Overweighting recent events\n        - Causes: chasing hot strategies, panic selling\n        - Solution: Use longer-term statistical analysis\n        \n        5. FEAR OF MISSING OUT (FOMO)\n        - Impulsive entries on momentum\n        - Causes: buying tops, poor entries\n        - Solution: Predefined entry criteria, patience rules\n        \n        6. REVENGE TRADING\n        - Trying to recover losses immediately\n        - Causes: increased size, poor setups\n        - Solution: Daily loss limits, mandatory breaks\n        \n        Discipline Framework:\n        - Have a written trading plan\n        - Follow rules mechanically\n        - Review trades objectively\n        - Accept losses as cost of business\n        - Focus on process, not outcomes\n        ",
+      "topics": [
+        "psychology",
+        "biases",
+        "discipline"
+      ]
+    }
+  },
+  {
+    "id": "150b08e3a00c",
+    "source": "Options Greeks Fundamentals",
+    "source_type": "concept",
+    "title": "Options Greeks Fundamentals",
+    "chapter": null,
+    "content": "\n        The Greeks measure option price sensitivity:\n        \n        DELTA (\u0394)\n        - Price change per $1 move in underlying\n        - Call deltas: 0 to 1, Put deltas: -1 to 0\n        - ATM options \u2248 0.50 delta\n        - Use for directional exposure sizing\n        \n        GAMMA (\u0393)\n        - Rate of delta change\n        - Highest for ATM options near expiration\n        - Long gamma = profit from movement\n        - Short gamma = profit from stillness\n        \n        THETA (\u0398)\n        - Time decay per day\n        - Always negative for long options\n        - Accelerates near expiration\n        - Sell theta, buy gamma\n        \n        VEGA (\u03bd)\n        - Sensitivity to IV changes\n        - Higher for longer-dated options\n        - Buy vega when IV is low\n        - Sell vega when IV is high\n        \n        RHO (\u03c1)\n        - Sensitivity to interest rates\n        - Usually minor factor\n        - Matters for LEAPS\n        \n        Greek-Based Strategies:\n        1. Delta neutral: hedge directional risk\n        2. Gamma scalping: profit from movement\n        3. Theta harvesting: sell premium\n        4. Vega trading: trade IV mean reversion\n        ",
+    "topics": [
+      "options",
+      "greeks",
+      "volatility"
+    ],
+    "relevance_scores": {
+      "options": 0.6,
+      "psychology": 0.0,
+      "risk": 0.05,
+      "volatility": 0.4,
+      "strategy": 0.05
+    },
+    "extracted_at": "2025-12-02T16:13:05.960931",
+    "metadata": {
+      "name": "Options Greeks Fundamentals",
+      "type": "concept",
+      "content": "\n        The Greeks measure option price sensitivity:\n        \n        DELTA (\u0394)\n        - Price change per $1 move in underlying\n        - Call deltas: 0 to 1, Put deltas: -1 to 0\n        - ATM options \u2248 0.50 delta\n        - Use for directional exposure sizing\n        \n        GAMMA (\u0393)\n        - Rate of delta change\n        - Highest for ATM options near expiration\n        - Long gamma = profit from movement\n        - Short gamma = profit from stillness\n        \n        THETA (\u0398)\n        - Time decay per day\n        - Always negative for long options\n        - Accelerates near expiration\n        - Sell theta, buy gamma\n        \n        VEGA (\u03bd)\n        - Sensitivity to IV changes\n        - Higher for longer-dated options\n        - Buy vega when IV is low\n        - Sell vega when IV is high\n        \n        RHO (\u03c1)\n        - Sensitivity to interest rates\n        - Usually minor factor\n        - Matters for LEAPS\n        \n        Greek-Based Strategies:\n        1. Delta neutral: hedge directional risk\n        2. Gamma scalping: profit from movement\n        3. Theta harvesting: sell premium\n        4. Vega trading: trade IV mean reversion\n        ",
+      "topics": [
+        "options",
+        "greeks",
+        "volatility"
+      ]
+    }
+  },
+  {
+    "id": "1133d7079573",
+    "source": "Risk Management Framework",
+    "source_type": "concept",
+    "title": "Risk Management Framework",
+    "chapter": null,
+    "content": "\n        Professional risk management rules:\n        \n        POSITION SIZING RULES:\n        1. Never risk more than 1-2% of capital per trade\n        2. Total portfolio risk < 6% at any time\n        3. Correlation-adjusted position limits\n        4. Scale into winners, not losers\n        \n        STOP LOSS RULES:\n        1. Always use stops (mental or hard)\n        2. Set before entering trade\n        3. Never move stop against position\n        4. Use ATR-based stops for volatility adjustment\n        \n        PORTFOLIO RULES:\n        1. Diversify across strategies\n        2. Limit single-name exposure\n        3. Hedge tail risk\n        4. Maintain cash buffer\n        \n        DRAWDOWN MANAGEMENT:\n        1. Reduce size after 10% drawdown\n        2. Stop trading after 20% drawdown\n        3. Review and reset after 25% drawdown\n        \n        EXPECTANCY FORMULA:\n        E = (Win% \u00d7 Avg Win) - (Loss% \u00d7 Avg Loss)\n        \n        Minimum acceptable:\n        - Expectancy > 0.2 \u00d7 Average Loss\n        - Sharpe ratio > 1.0\n        - Max drawdown < 20%\n        \n        Risk of ruin formula approximation:\n        RoR \u2248 ((1-Edge)/(1+Edge))^(Capital/BetSize)\n        ",
+    "topics": [
+      "risk",
+      "position_sizing",
+      "drawdown"
+    ],
+    "relevance_scores": {
+      "options": 0.0,
+      "psychology": 0.0,
+      "risk": 0.95,
+      "volatility": 0.1,
+      "strategy": 0.1
+    },
+    "extracted_at": "2025-12-02T16:13:05.969051",
+    "metadata": {
+      "name": "Risk Management Framework",
+      "type": "concept",
+      "content": "\n        Professional risk management rules:\n        \n        POSITION SIZING RULES:\n        1. Never risk more than 1-2% of capital per trade\n        2. Total portfolio risk < 6% at any time\n        3. Correlation-adjusted position limits\n        4. Scale into winners, not losers\n        \n        STOP LOSS RULES:\n        1. Always use stops (mental or hard)\n        2. Set before entering trade\n        3. Never move stop against position\n        4. Use ATR-based stops for volatility adjustment\n        \n        PORTFOLIO RULES:\n        1. Diversify across strategies\n        2. Limit single-name exposure\n        3. Hedge tail risk\n        4. Maintain cash buffer\n        \n        DRAWDOWN MANAGEMENT:\n        1. Reduce size after 10% drawdown\n        2. Stop trading after 20% drawdown\n        3. Review and reset after 25% drawdown\n        \n        EXPECTANCY FORMULA:\n        E = (Win% \u00d7 Avg Win) - (Loss% \u00d7 Avg Loss)\n        \n        Minimum acceptable:\n        - Expectancy > 0.2 \u00d7 Average Loss\n        - Sharpe ratio > 1.0\n        - Max drawdown < 20%\n        \n        Risk of ruin formula approximation:\n        RoR \u2248 ((1-Edge)/(1+Edge))^(Capital/BetSize)\n        ",
+      "topics": [
+        "risk",
+        "position_sizing",
+        "drawdown"
+      ]
+    }
+  },
+  {
+    "id": "abe3e02193b7",
+    "source": "Volatility Trading Concepts",
+    "source_type": "concept",
+    "title": "Volatility Trading Concepts",
+    "chapter": null,
+    "content": "\n        Key volatility concepts:\n        \n        IMPLIED vs REALIZED VOLATILITY:\n        - IV = market's expectation of future vol\n        - RV = actual historical volatility\n        - IV typically trades at premium to RV\n        - Variance risk premium = IV - RV\n        \n        VOLATILITY MEAN REVERSION:\n        - IV tends to revert to historical average\n        - VIX mean \u2248 19-20\n        - Extreme readings are temporary\n        - Trade mean reversion with options\n        \n        VOLATILITY SKEW:\n        - OTM puts usually have higher IV\n        - Reflects crash risk premium\n        - Use for relative value trades\n        \n        TERM STRUCTURE:\n        - Contango: front month < back month\n        - Backwardation: front > back (fear)\n        - Trade calendar spreads on structure\n        \n        VIX-BASED STRATEGIES:\n        1. Sell vol when VIX > 25\n        2. Buy vol when VIX < 12\n        3. Use VIX as hedge sizing guide\n        \n        REGIME DETECTION:\n        - Low vol: VIX < 15, sell premium\n        - Normal: VIX 15-25, trade direction\n        - High vol: VIX > 25, buy protection\n        - Crisis: VIX > 40, cash is king\n        ",
+    "topics": [
+      "volatility",
+      "vix",
+      "options"
+    ],
+    "relevance_scores": {
+      "options": 0.35,
+      "psychology": 0.05,
+      "risk": 0.1,
+      "volatility": 1.0,
+      "strategy": 0.25
+    },
+    "extracted_at": "2025-12-02T16:13:05.969051",
+    "metadata": {
+      "name": "Volatility Trading Concepts",
+      "type": "concept",
+      "content": "\n        Key volatility concepts:\n        \n        IMPLIED vs REALIZED VOLATILITY:\n        - IV = market's expectation of future vol\n        - RV = actual historical volatility\n        - IV typically trades at premium to RV\n        - Variance risk premium = IV - RV\n        \n        VOLATILITY MEAN REVERSION:\n        - IV tends to revert to historical average\n        - VIX mean \u2248 19-20\n        - Extreme readings are temporary\n        - Trade mean reversion with options\n        \n        VOLATILITY SKEW:\n        - OTM puts usually have higher IV\n        - Reflects crash risk premium\n        - Use for relative value trades\n        \n        TERM STRUCTURE:\n        - Contango: front month < back month\n        - Backwardation: front > back (fear)\n        - Trade calendar spreads on structure\n        \n        VIX-BASED STRATEGIES:\n        1. Sell vol when VIX > 25\n        2. Buy vol when VIX < 12\n        3. Use VIX as hedge sizing guide\n        \n        REGIME DETECTION:\n        - Low vol: VIX < 15, sell premium\n        - Normal: VIX 15-25, trade direction\n        - High vol: VIX > 25, buy protection\n        - Crisis: VIX > 40, cash is king\n        ",
+      "topics": [
+        "volatility",
+        "vix",
+        "options"
+      ]
+    }
+  },
+  {
+    "id": "71a14084a633",
+    "source": "Common Trading Mistakes",
+    "source_type": "concept",
+    "title": "Common Trading Mistakes",
+    "chapter": null,
+    "content": "\n        TOP TRADING MISTAKES TO AVOID:\n        \n        1. NO TRADING PLAN\n        - Random entries, no exit strategy\n        - Fix: Write detailed plan before trading\n        \n        2. OVERLEVERAGING\n        - Position sizes too large for account\n        - Fix: Use Kelly criterion, max 2% risk\n        \n        3. AVERAGING DOWN\n        - Adding to losing positions\n        - Fix: Only average into winners\n        \n        4. NOT USING STOPS\n        - Letting losses run unlimited\n        - Fix: Always have predefined stop\n        \n        5. OVERTRADING\n        - Too many trades, high commissions\n        - Fix: Quality over quantity\n        \n        6. CHASING PERFORMANCE\n        - Buying after big moves up\n        - Fix: Wait for pullbacks\n        \n        7. IGNORING CORRELATION\n        - Multiple positions that move together\n        - Fix: Check correlation before adding\n        \n        8. FIGHTING THE TREND\n        - Shorting uptrends, buying downtrends\n        - Fix: Trade with the trend\n        \n        9. NOT KEEPING RECORDS\n        - No trade journal or analysis\n        - Fix: Log every trade, review weekly\n        \n        10. EMOTIONAL TRADING\n        - Revenge trades, FOMO, panic\n        - Fix: Rules-based system, breaks\n        \n        BLOWUP SCENARIOS:\n        - Selling naked options in crisis\n        - Using full margin\n        - Concentrated positions\n        - No hedges in place\n        ",
+    "topics": [
+      "psychology",
+      "mistakes",
+      "risk"
+    ],
+    "relevance_scores": {
+      "options": 0.05,
+      "psychology": 0.05,
+      "risk": 0.3,
+      "volatility": 0.0,
+      "strategy": 0.35
+    },
+    "extracted_at": "2025-12-02T16:13:05.969051",
+    "metadata": {
+      "name": "Common Trading Mistakes",
+      "type": "concept",
+      "content": "\n        TOP TRADING MISTAKES TO AVOID:\n        \n        1. NO TRADING PLAN\n        - Random entries, no exit strategy\n        - Fix: Write detailed plan before trading\n        \n        2. OVERLEVERAGING\n        - Position sizes too large for account\n        - Fix: Use Kelly criterion, max 2% risk\n        \n        3. AVERAGING DOWN\n        - Adding to losing positions\n        - Fix: Only average into winners\n        \n        4. NOT USING STOPS\n        - Letting losses run unlimited\n        - Fix: Always have predefined stop\n        \n        5. OVERTRADING\n        - Too many trades, high commissions\n        - Fix: Quality over quantity\n        \n        6. CHASING PERFORMANCE\n        - Buying after big moves up\n        - Fix: Wait for pullbacks\n        \n        7. IGNORING CORRELATION\n        - Multiple positions that move together\n        - Fix: Check correlation before adding\n        \n        8. FIGHTING THE TREND\n        - Shorting uptrends, buying downtrends\n        - Fix: Trade with the trend\n        \n        9. NOT KEEPING RECORDS\n        - No trade journal or analysis\n        - Fix: Log every trade, review weekly\n        \n        10. EMOTIONAL TRADING\n        - Revenge trades, FOMO, panic\n        - Fix: Rules-based system, breaks\n        \n        BLOWUP SCENARIOS:\n        - Selling naked options in crisis\n        - Using full margin\n        - Concentrated positions\n        - No hedges in place\n        ",
+      "topics": [
+        "psychology",
+        "mistakes",
+        "risk"
+      ]
+    }
+  },
+  {
+    "id": "3b86468b9d2b",
+    "source": "High Probability Options Setups",
+    "source_type": "concept",
+    "title": "High Probability Options Setups",
+    "chapter": null,
+    "content": "\n        HIGH PROBABILITY OPTIONS STRATEGIES:\n        \n        1. WHEEL STRATEGY (70-80% win rate)\n        - Sell cash-secured puts on stocks you want\n        - If assigned, sell covered calls\n        - Repeat: collect premium continuously\n        - Best in: sideways to slightly bullish markets\n        - Risk: stock drops significantly\n        \n        2. IRON CONDOR (65-75% win rate)\n        - Sell OTM put spread + OTM call spread\n        - Profit from low volatility\n        - Max profit: net premium received\n        - Max loss: width - premium\n        - Best in: range-bound markets\n        \n        3. CREDIT SPREADS (60-70% win rate)\n        - Sell OTM option, buy further OTM\n        - Defined risk, high probability\n        - Bull put spread: bullish\n        - Bear call spread: bearish\n        \n        4. CALENDAR SPREADS (55-65% win rate)\n        - Sell near-term, buy longer-term\n        - Profit from time decay differential\n        - Vega positive: benefits from IV rise\n        - Best when IV term structure steep\n        \n        5. EARNINGS STRANGLES (varies)\n        - Sell strangles before earnings\n        - Capture IV crush\n        - High risk if move exceeds expected\n        - Use on high IV rank stocks\n        \n        WIN RATE vs EXPECTANCY:\n        - High win rate \u2260 profitable\n        - Must consider risk/reward\n        - 90% win rate with 10:1 loss = losing\n        - 40% win rate with 3:1 RR = winning\n        \n        SETUP CRITERIA:\n        - IV Rank > 50 for selling premium\n        - IV Rank < 30 for buying premium\n        - Days to expiration: 30-45 optimal\n        - Delta: 0.15-0.30 for credit spreads\n        ",
+    "topics": [
+      "options",
+      "strategies",
+      "probability"
+    ],
+    "relevance_scores": {
+      "options": 0.7,
+      "psychology": 0.0,
+      "risk": 0.3,
+      "volatility": 0.45,
+      "strategy": 0.1
+    },
+    "extracted_at": "2025-12-02T16:13:05.969051",
+    "metadata": {
+      "name": "High Probability Options Setups",
+      "type": "concept",
+      "content": "\n        HIGH PROBABILITY OPTIONS STRATEGIES:\n        \n        1. WHEEL STRATEGY (70-80% win rate)\n        - Sell cash-secured puts on stocks you want\n        - If assigned, sell covered calls\n        - Repeat: collect premium continuously\n        - Best in: sideways to slightly bullish markets\n        - Risk: stock drops significantly\n        \n        2. IRON CONDOR (65-75% win rate)\n        - Sell OTM put spread + OTM call spread\n        - Profit from low volatility\n        - Max profit: net premium received\n        - Max loss: width - premium\n        - Best in: range-bound markets\n        \n        3. CREDIT SPREADS (60-70% win rate)\n        - Sell OTM option, buy further OTM\n        - Defined risk, high probability\n        - Bull put spread: bullish\n        - Bear call spread: bearish\n        \n        4. CALENDAR SPREADS (55-65% win rate)\n        - Sell near-term, buy longer-term\n        - Profit from time decay differential\n        - Vega positive: benefits from IV rise\n        - Best when IV term structure steep\n        \n        5. EARNINGS STRANGLES (varies)\n        - Sell strangles before earnings\n        - Capture IV crush\n        - High risk if move exceeds expected\n        - Use on high IV rank stocks\n        \n        WIN RATE vs EXPECTANCY:\n        - High win rate \u2260 profitable\n        - Must consider risk/reward\n        - 90% win rate with 10:1 loss = losing\n        - 40% win rate with 3:1 RR = winning\n        \n        SETUP CRITERIA:\n        - IV Rank > 50 for selling premium\n        - IV Rank < 30 for buying premium\n        - Days to expiration: 30-45 optimal\n        - Delta: 0.15-0.30 for credit spreads\n        ",
+      "topics": [
+        "options",
+        "strategies",
+        "probability"
+      ]
+    }
+  }
+]

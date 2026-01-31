@@ -4,6 +4,9 @@
 .env.*.local
 .env.dev
 .env.prod
+# Local env overrides (keep real API keys here; never commit)
+setup_tradier_env.local
+*_local.sh
 
 # Safety files
 safety/locks/

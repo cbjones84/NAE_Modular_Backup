@@ -20,7 +20,7 @@ ALIGNED WITH 3 CORE GOALS:
 
 ALIGNED WITH LONG-TERM PLAN:
 - Generates strategies aligned with tiered framework (Wheel → Momentum → Multi-leg → AI)
-- Focuses on PDT-compliant strategies (no same-day round trips)
+- No PDT restrictions (unlimited day trading allowed)
 - Learns patterns that contribute to compound growth toward $5M goal
 - See: docs/NAE_LONG_TERM_PLAN.md for full strategy details
 """

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Day Trading Prevention and Compliance System
-Ensures NAE never violates Pattern Day Trader (PDT) rules
+Day Trading Compliance (PDT restrictions REMOVED)
+PDT restrictions are disabled - unlimited day trading allowed.
+This module retains structure for logging only; no orders are blocked.
 """
 
 import os
@@ -39,10 +40,8 @@ class TradingDay:
 
 class DayTradingPrevention:
     """
-    Prevents Pattern Day Trader violations
-    
-    PDT Rule: No more than 3 day trades in any rolling 5-business-day period
-    Day Trade: Opening and closing a position in the same security on the same day
+    Day trading compliance (PDT restrictions REMOVED).
+    All day trades are allowed; no blocking. Retained for logging/compatibility only.
     """
     
     def __init__(self, data_file: str = "data/day_trading_compliance.json"):
@@ -56,8 +55,8 @@ class DayTradingPrevention:
         self.trading_history: List[TradingDay] = []
         self.open_positions: Dict[str, Dict] = {}  # symbol -> position info
         
-        # PDT Rule: Max 3 day trades in 5 business days
-        self.max_day_trades_per_period = 3
+        # PDT restrictions REMOVED - unlimited day trades allowed
+        self.max_day_trades_per_period = 99999
         self.rolling_period_days = 5
         
         # Load existing history
@@ -67,8 +66,8 @@ class DayTradingPrevention:
         self.log_file = "logs/day_trading_compliance.log"
         os.makedirs(os.path.dirname(self.log_file), exist_ok=True)
         
-        logger.info("Day Trading Prevention system initialized")
-        self.log_action("Day Trading Prevention system initialized - MAX 3 DAY TRADES PER 5 BUSINESS DAYS")
+        logger.info("Day Trading Compliance initialized (PDT restrictions removed - unlimited day trading)")
+        self.log_action("Day Trading Compliance initialized - PDT RESTRICTIONS REMOVED (unlimited day trading)")
     
     def log_action(self, message: str):
         """Log compliance action"""
@@ -317,23 +316,9 @@ class DayTradingPrevention:
     
     def validate_order(self, symbol: str, side: str, quantity: int) -> Tuple[bool, str]:
         """
-        Validate if order is compliant with day trading rules
-        
-        Args:
-            symbol: Stock symbol
-            side: "buy" or "sell"
-            quantity: Number of shares
-            
-        Returns:
-            (is_allowed, reason)
+        Validate if order is compliant. PDT restrictions REMOVED - always allowed.
         """
-        # Check if this would create a day trade
-        allowed, reason = self.check_day_trade_allowed(symbol, side)
-        
-        if not allowed:
-            return False, reason
-        
-        return True, "Order compliant with day trading rules"
+        return True, "PDT restrictions removed - order allowed"
 
 
 if __name__ == "__main__":

@@ -15,7 +15,7 @@ async def analyze_strategy(params: str) -> str:
             "findings": [
                 "Strong momentum alignment",
                 "Favorable volatility profile",
-                "PDT restrictions bypassed (enabled)"
+                "PDT restrictions removed (unlimited day trading)"
             ]
         }
         return json.dumps(analysis, indent=2)

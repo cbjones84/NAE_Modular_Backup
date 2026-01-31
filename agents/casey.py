@@ -17,7 +17,7 @@ ALIGNED WITH 3 CORE GOALS:
 
 ALIGNED WITH LONG-TERM PLAN:
 - Orchestrates all agents toward long-term plan compliance
-- Monitors PDT prevention across all agents
+- Monitors trading (PDT restrictions removed)
 - Tracks progress toward $5M goal (Goal #2)
 - Ensures agents understand their role in achieving generational wealth
 - See: docs/NAE_LONG_TERM_PLAN.md for full strategy details

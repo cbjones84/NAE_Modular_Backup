@@ -5,11 +5,11 @@ Execute Multiple Strategies - Aligned with Long-Term Plan & 3 Goals
 This script executes multiple trading strategies through the full NAE flow:
 1. Ralph generates/validates strategies
 2. Donnie validates and prepares execution
-3. Optimus executes with entry/exit timing and PDT prevention
+3. Optimus executes with entry/exit timing (PDT restrictions removed)
 
 ALIGNED WITH:
 - 3 Core Goals (Generational wealth, $5M in 8 years, Optimize options trading)
-- Long-Term Plan (Phase 1: Wheel Strategy, PDT prevention)
+- Long-Term Plan (Phase 1: Wheel Strategy; PDT restrictions removed)
 - Tiered Strategy Framework (Tier 1: Wheel Strategy for Phase 1)
 """
 
@@ -87,7 +87,7 @@ def create_momentum_strategies() -> list:
             "action": "buy",
             "option_type": "call",
             "strike_selection": "ATM to 0.15 delta OTM",
-            "dte": 14,  # 14-21 days (avoid 0 DTE for PDT compliance)
+            "dte": 14,  # 14-21 days
             "profit_target": 0.75,  # 75% profit target
             "stop_loss": 0.30,  # 30% stop loss
             "pdt_compliant": True,  # Entry at close, exit next day or later
@@ -124,7 +124,7 @@ def execute_strategies():
     print("  3. Optimize NAE and agents for successful options trading")
     print()
     print("Current Phase: Phase 1 - Foundation (Tier 1: Wheel Strategy)")
-    print("PDT Prevention: ACTIVE (all positions hold overnight minimum)")
+    print("PDT restrictions: REMOVED (unlimited day trading)")
     print()
     
     # Initialize agents
@@ -211,7 +211,7 @@ def execute_strategies():
     # Execute strategies through Optimus
     print("\n5. Executing Strategies with Optimus...")
     print("   ⚠️  This will execute REAL paper trades (Alpaca paper trading)")
-    print("   ⚠️  All trades enforce PDT prevention (overnight hold minimum)")
+    print("   PDT restrictions removed - unlimited day trading allowed")
     print()
     
     execution_results = []
@@ -233,7 +233,7 @@ def execute_strategies():
             "parameters": strategy.get("parameters", {}),
             "tier": strategy.get("tier", 1),
             "phase": strategy.get("phase", "Phase 1"),
-            "pdt_compliant": True  # Explicitly mark as PDT compliant
+            "pdt_compliant": True  # PDT restrictions removed
         }
         
         # For options strategies, we need to convert to stock/options format
@@ -355,7 +355,7 @@ def execute_strategies():
     print("Next Steps:")
     print("  1. Monitor positions in Alpaca dashboard")
     print("  2. Check logs for entry/exit timing analysis")
-    print("  3. Review PDT compliance (all positions held overnight)")
+    print("  3. Track positions and compound growth")
     print("  4. Track compound growth toward $5M goal")
     print()
     

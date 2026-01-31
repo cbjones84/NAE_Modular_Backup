@@ -4,8 +4,8 @@
 
 # Tradier Configuration
 export TRADIER_SANDBOX="false"  # Use LIVE trading
-export TRADIER_API_KEY="XOc1KgO6WoKtYVNvOOhYD6lA7ogd"
-export TRADIER_ACCOUNT_ID="6YB66744"
+export TRADIER_API_KEY="YOUR_TRADIER_API_KEY"
+export TRADIER_ACCOUNT_ID="YOUR_TRADIER_ACCOUNT_ID"
 
 # Verify environment variables are set
 echo "✅ Tradier Environment Variables Set:"

@@ -214,7 +214,7 @@ class NAEContinuousAutomation:
                                 "parameters": strategy.get("parameters", {}),
                                 "tier": strategy.get("tier", 1),
                                 "phase": strategy.get("phase", "Phase 1"),
-                                "pdt_compliant": False,
+                                "pdt_restrictions_removed": True,
                                 "strategy_type": strategy.get("strategy_type", "unknown")
                             }
                             

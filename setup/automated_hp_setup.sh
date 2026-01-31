@@ -54,7 +54,7 @@ fi
 # Step 3: Configure as Node
 echo ""
 echo "Step 3: Configuring as Node..."
-MASTER_API_KEY="72364bc8ecfea124010e9811d06d0b0b3b220e4dee3d09163b2bd1f005af40a7"
+MASTER_API_KEY="YOUR_MASTER_API_KEY"
 MASTER_URL="http://$(hostname -I | awk '{print $1}'):8080"  # Will need Mac IP
 
 if [ -f "setup/configure_node.sh" ]; then

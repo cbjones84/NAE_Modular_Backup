@@ -249,8 +249,7 @@ class TimingStrategyEngine:
         """
         Comprehensive exit timing analysis
         
-        CRITICAL: Enforces PDT prevention - no same-day exits
-        All exits must occur after minimum hold period (overnight minimum)
+        PDT restrictions removed - same-day exits allowed (unlimited day trading).
         
         Args:
             symbol: Trading symbol
@@ -772,13 +771,13 @@ class TimingStrategyEngine:
         return min(100, score)
 
 
-def create_timing_engine(nav: float = 25000.0, pdt_prevention: bool = True) -> TimingStrategyEngine:
+def create_timing_engine(nav: float = 25000.0, pdt_prevention: bool = False) -> TimingStrategyEngine:
     """
     Factory function to create timing strategy engine
     
     Args:
         nav: Net Asset Value for position sizing
-        pdt_prevention: Enable Pattern Day Trading prevention (default: True)
+        pdt_prevention: PDT prevention disabled (default: False) - unlimited day trading
     """
     return TimingStrategyEngine(nav=nav, pdt_prevention=pdt_prevention)
 

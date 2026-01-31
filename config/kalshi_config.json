@@ -1,5 +1,5 @@
 {
-  "api_key_id": "72c42c1a-4ded-4d9f-91ae-3bed33952355",
+  "api_key_id": "YOUR_KALSHI_API_KEY_ID_HERE",
   "private_key_source": "vault_or_api_keys_json",
   "private_key_notes": "Private key stored in config/api_keys.json and secure vault",
   "demo_mode": false,

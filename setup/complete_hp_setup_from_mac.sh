@@ -72,7 +72,7 @@ echo "Initializing safety systems..."
 bash setup/initialize_safety_systems.sh
 
 # Configure as node
-MASTER_API_KEY="72364bc8ecfea124010e9811d06d0b0b3b220e4dee3d09163b2bd1f005af40a7"
+MASTER_API_KEY="YOUR_MASTER_API_KEY"
 echo "Configuring as Node..."
 if [ -f ".env.prod" ]; then
     cat >> .env.prod << EOF

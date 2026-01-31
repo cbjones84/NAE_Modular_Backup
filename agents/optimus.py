@@ -1377,11 +1377,7 @@ class OptimusAgent:
                 
                 if not can_trade:
                     return False, f"Day trading compliance: {reason}"
-            else:
-                # Margin account or day trading disabled: Use PDT prevention
-                if self._would_close_same_day_position(order_data):
-                    return False, "Day trading not allowed: Cannot close position opened today"
-            
+            # PDT restrictions removed - no same-day exit blocking
             return True, "All pre-trade checks passed"
             
         except Exception as e:
@@ -1432,102 +1428,10 @@ class OptimusAgent:
     
     def _would_close_same_day_position(self, order_data: Dict[str, Any]) -> bool:
         """
-        PATTERN DAY TRADING (PDT) PREVENTION: Check if this order would close a position opened today
-        
-        NOTE: This only applies to margin accounts or when day trading is disabled.
-        Cash accounts can day trade unlimited times (no PDT restrictions).
-        
-        CRITICAL: This prevents Pattern Day Trading violations for margin accounts
-        - PDT Rule: 4+ same-day round trips in 5 business days = PDT classification (margin only)
-        - Margin accounts: All positions MUST hold overnight (minimum 1 day)
-        - Cash accounts: Can day trade using settled funds (no PDT restrictions)
-        - Returns True if attempting to close a position that was opened on the same day (margin only)
-        
-        This is STRICTLY ENFORCED for margin accounts to maintain legal compliance
+        PDT restrictions REMOVED. Same-day exits are always allowed (unlimited day trading).
+        Returns False so no order is ever blocked for PDT.
         """
-        try:
-            symbol = order_data.get('symbol', '')
-            side = order_data.get('side', '').lower()
-            action = order_data.get('action', side).lower()
-            
-            # Only check for sell orders (closing positions)
-            if side not in ['sell'] and action not in ['sell']:
-                return False  # Buying doesn't close positions
-            
-            # Check if we have an open position for this symbol
-            if symbol not in self.open_positions_dict:
-                # Also check Tradier positions if available
-                if self.self_healing_engine and hasattr(self.self_healing_engine, 'tradier_adapter'):
-                    try:
-                        tradier_adapter = self.self_healing_engine.tradier_adapter
-                        if tradier_adapter:
-                            tradier_positions = tradier_adapter.get_positions()
-                            symbol_positions = [p for p in tradier_positions if p.get('symbol') == symbol]
-                        if not symbol_positions:
-                            return False  # No position to close
-                            # Sync Tradier position to our tracking
-                        pos = symbol_positions[0]
-                        if symbol not in self.open_positions_dict:
-                            self.open_positions_dict[symbol] = {
-                                    'entry_price': pos.get('cost_basis', pos.get('average_price', 0)),
-                                    'quantity': pos.get('quantity', 0),
-                                    'side': 'long' if pos.get('quantity', 0) > 0 else 'short',
-                                # Conservative assumption: treat as opened today if timestamp unavailable
-                                'entry_time': (
-                                    datetime.datetime.now().isoformat()
-                                    if not pos.get('entry_time')
-                                    else pos['entry_time']
-                                ),
-                                'unrealized_pnl': pos['unrealized_pl']
-                            }
-                    except Exception:
-                        pass  # If we can't check Tradier, continue with local tracking
-                else:
-                    return False  # No position tracked locally
-            
-            # Get the position
-            position = self.open_positions_dict.get(symbol)
-            if not position:
-                return False
-            
-            # Check if position was opened today
-            entry_time_str = position.get('entry_time')
-            if not entry_time_str:
-                # If no entry time, assume it's old (safe assumption to prevent day trading)
-                return False
-            
-            try:
-                entry_time = datetime.datetime.fromisoformat(entry_time_str.replace('Z', '+00:00'))
-                # Remove timezone for comparison
-                if entry_time.tzinfo:
-                    entry_time = entry_time.replace(tzinfo=None)
-                
-                current_time = datetime.datetime.now()
-                
-                # Check if entry date is today (PDT PREVENTION)
-                if entry_time.date() == current_time.date():
-                    self.log_action(f"🚨 PDT PREVENTION: BLOCKED same-day exit for {symbol} opened today at {entry_time}")
-                    self.log_action(f"   Position must hold overnight minimum (1 full trading day)")
-                    return True  # Block same-day closing
-                
-                # Also check if position was opened yesterday (within 24 hours)
-                # This provides additional safety margin
-                hours_held = (current_time - entry_time).total_seconds() / 3600
-                if hours_held < 24:
-                    self.log_action(f"⚠️ PDT SAFETY: Position {symbol} held {hours_held:.1f} hours - recommended minimum 24 hours")
-                    # Don't block, but warn - timing engine will enforce minimum hold
-                
-                return False  # Position opened on a different day, allow closing
-                
-            except Exception as e:
-                self.log_action(f"Error checking entry date: {e}")
-                # On error, be conservative and prevent day trading
-                return True  # Block if we can't determine entry date
-            
-        except Exception as e:
-            self.log_action(f"Error in day trading check: {e}")
-            # On error, be conservative
-            return True  # Block if we can't determine
+        return False
 
     def activate_kill_switch(self, reason: str = "Manual activation") -> bool:
         """Activate kill switch to halt all trading"""
@@ -4133,14 +4037,8 @@ class OptimusAgent:
                     current_pnl_pct=current_pnl_pct
                 )
                 
-                # Execute exit if recommended AND PDT compliant
+                # Execute exit if recommended (PDT restrictions removed - same-day exits allowed)
                 if exit_analysis.should_exit and exit_analysis.confidence > 0.7:
-                    # CRITICAL: Check PDT compliance before exit
-                    if exit_analysis.exit_reasons and any("PDT Prevention" in reason for reason in exit_analysis.exit_reasons):
-                        # PDT prevention blocked exit - log but don't execute
-                        self.log_action(f"🚨 PDT PREVENTION: Exit blocked for {symbol} - {exit_analysis.exit_reasons[0]}")
-                        continue  # Skip this exit
-                    
                     self.log_action(f"🚪 EXIT SIGNAL: {symbol} - {exit_analysis.exit_reason.value if exit_analysis.exit_reason else 'Unknown'}, "
                                   f"Confidence={exit_analysis.confidence:.2%}, "
                                   f"Urgency={exit_analysis.exit_urgency}, "

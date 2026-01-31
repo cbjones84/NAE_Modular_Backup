@@ -12,7 +12,7 @@ echo "╚═══════════════════════�
 # Export environment
 export NAE_ROOT="$NAE_ROOT"
 export NAE_UPDATE_PORT=8081
-export NAE_UPDATE_API_KEY="a07e9de261c6eb815fbcd9cb6263f0862534af1cd3cc3540c87ed70ce0e4438d"
+export NAE_UPDATE_API_KEY="YOUR_NAE_UPDATE_API_KEY"
 
 # Check if Flask is installed
 if ! python3 -c "import flask" 2>/dev/null; then

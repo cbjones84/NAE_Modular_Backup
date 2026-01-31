@@ -11,7 +11,7 @@ This script:
 ALIGNED WITH:
 - 3 Core Goals
 - Long-Term Plan (Phase-aware strategy execution)
-- PDT Prevention (all positions hold overnight)
+- PDT restrictions removed (unlimited day trading)
 """
 
 import sys
@@ -196,7 +196,7 @@ def batch_execute():
     # Execute strategies (limit to avoid over-trading)
     max_executions = min(10, len(validated))
     print(f"Executing Top {max_executions} Strategies...")
-    print("⚠️  All trades enforce PDT prevention (overnight hold minimum)")
+    print("PDT restrictions removed - unlimited day trading allowed")
     print()
     
     results = []

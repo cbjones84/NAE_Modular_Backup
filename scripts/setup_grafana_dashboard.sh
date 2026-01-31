@@ -43,7 +43,7 @@ services:
       - "3000:3000"
     environment:
       - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=nae_admin_2024
+      - GF_SECURITY_ADMIN_PASSWORD=YOUR_GRAFANA_ADMIN_PASSWORD
       - GF_USERS_ALLOW_SIGN_UP=false
     volumes:
       - grafana_data:/var/lib/grafana
@@ -229,7 +229,7 @@ echo "  docker-compose -f docker-compose.monitoring.yml up -d"
 echo ""
 echo "Access Grafana at: http://localhost:3000"
 echo "  Username: admin"
-echo "  Password: nae_admin_2024"
+echo "  Password: (set in docker-compose or YOUR_GRAFANA_ADMIN_PASSWORD)"
 echo ""
 echo "Access Prometheus at: http://localhost:9090"
 echo ""

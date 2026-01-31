@@ -43,8 +43,9 @@ if TYPE_CHECKING:
 # Goals embedded - managed by GoalManager
 import sys
 import asyncio
-from mcp import ClientSession, StdioServerParameters
-from mcp.client.stdio import stdio_client
+# MCP imports commented out - requires Python 3.13+ (system has 3.9)
+# from mcp import ClientSession, StdioServerParameters
+# from mcp.client.stdio import stdio_client
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from goal_manager import get_nae_goals
@@ -598,11 +599,12 @@ class RalphAgent:
         # ----------------------
         self.mcp_session = None
         venv_python = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "venv_python311", "bin", "python3")
-        self._mcp_server_params = StdioServerParameters(
-            command=venv_python,
-            args=[os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "core", "mcp", "nae_research_mcp.py")],
-            env=os.environ.copy()
-        )
+        # MCP disabled - requires Python 3.13+
+       # self._mcp_server_params = StdioServerParameters(
+       #     command=venv_python,
+       #     args=[os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "core", "mcp", "nae_research_mcp.py")],
+       #     env=os.environ.copy()
+       # )
         
     def register_optimus_channel(self, optimus_agent):
         """
@@ -1824,13 +1826,14 @@ class {candidate.get('name', 'Strategy').replace(' ', '_')}(QCAlgorithm):
     # ----------------------
     # Main ingestion → evaluate → filter → commit cycle
     # ----------------------
-    async def _call_mcp_tool(self, server_params: StdioServerParameters, tool_name: str, arguments: Dict[str, Any]) -> Any:
-        """Call an MCP tool asynchronously"""
-        async with stdio_client(server_params) as (read, write):
-            async with ClientSession(read, write) as session:
-                await session.initialize()
-                result = await session.call_tool(tool_name, arguments)
-                return result.content[0].text if result.content else ""
+    # MCP disabled - requires Python 3.13+
+    # async def _call_mcp_tool(self, server_params: StdioServerParameters, tool_name: str, arguments: Dict[str, Any]) -> Any:
+    #     """Call an MCP tool asynchronously"""
+    #     async with stdio_client(server_params) as (read, write):
+    #         async with ClientSession(read, write) as session:
+    #             await session.initialize()
+    #             result = await session.call_tool(tool_name, arguments)
+    #             return result.content[0].text if result.content else ""
 
     def run_cycle(self) -> Dict[str, Any]:
         """Ralph's main research and strategy hunting cycle"""
@@ -1841,33 +1844,37 @@ class {candidate.get('name', 'Strategy').replace(' ', '_')}(QCAlgorithm):
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             
-            # MCP Research Calls
-            self.log_action("Calling MCP NAE Research Server...")
+            # MCP disabled - requires Python 3.13+
+            # self.log_action("Calling MCP NAE Research Server...")
             
-            # 1. GitHub Hunt via MCP
-            github_data_raw = loop.run_until_complete(self._call_mcp_tool(
-                self._mcp_server_params, 
-                "hunt_github", 
-                {"query": "options trading strategy python", "limit": 10}
-            ))
-            github_items = json.loads(github_data_raw) if github_data_raw else []
+            # # 1. GitHub Hunt via MCP
+            # github_data_raw = loop.run_until_complete(self._call_mcp_tool(
+            #     self._mcp_server_params, 
+            #     "hunt_github", 
+            #     {"query": "options trading strategy python", "limit": 10}
+            # ))
+            # github_items = json.loads(github_data_raw) if github_data_raw else []
             
-            # 2. Web Research via MCP
-            web_data_raw = loop.run_until_complete(self._call_mcp_tool(
-                self._mcp_server_params,
-                "web_research",
-                {"ticker": "SPY"}
-            ))
-            # Merge web research results into items list (simplified for now)
-            web_res = json.loads(web_data_raw) if web_data_raw else None
+            # # 2. Web Research via MCP
+            # web_data_raw = loop.run_until_complete(self._call_mcp_tool(
+            #     self._mcp_server_params,
+            #     "web_research",
+            #     {"ticker": "SPY"}
+            # ))
+            # # Merge web research results into items list (simplified for now)
+            # web_res = json.loads(web_data_raw) if web_data_raw else None
+            # web_items = []
+            # if web_res:
+            #     web_items.append({
+            #         "name": f"Web Research: {web_res.get('ticker')}",
+            #         "source": "web_mcp",
+            
+            # MCP disabled - using fallback empty lists
+            github_items = []
             web_items = []
-            if web_res:
-                web_items.append({
-                    "name": f"Web Research: {web_res.get('ticker')}",
-                    "source": "web_mcp",
-                    "details": str(web_res.get("recent_news")),
-                    "raw_score": 0.7  # Sentiment-based or default
-                })
+            #         "details": str(web_res.get("recent_news")),
+            #         "raw_score": 0.7  # Sentiment-based or default
+            #     })
             
             # Legacy Fallback for sources not yet in MCP
             ai_items = self.ingest_from_ai_sources()

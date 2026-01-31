@@ -1,0 +1,3 @@
+# Minimal dependencies for Model CI/CD (Validate Model job).
+# tools/model_registry.py uses only stdlib; pytest for model validation tests when added.
+pytest>=7.0.0

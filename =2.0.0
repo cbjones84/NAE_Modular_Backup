@@ -1,0 +1,34 @@
+Defaulting to user installation because normal site-packages is not writeable
+Collecting torch
+  Downloading torch-2.2.2-cp39-none-macosx_10_9_x86_64.whl.metadata (25 kB)
+Collecting filelock (from torch)
+  Downloading filelock-3.19.1-py3-none-any.whl.metadata (2.1 kB)
+Requirement already satisfied: typing-extensions>=4.8.0 in /Users/melissabishop/Library/Python/3.9/lib/python/site-packages (from torch) (4.15.0)
+Collecting sympy (from torch)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch)
+  Downloading networkx-3.2.1-py3-none-any.whl.metadata (5.2 kB)
+Requirement already satisfied: jinja2 in /Users/melissabishop/Library/Python/3.9/lib/python/site-packages (from torch) (3.1.6)
+Collecting fsspec (from torch)
+  Downloading fsspec-2025.10.0-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in /Users/melissabishop/Library/Python/3.9/lib/python/site-packages (from jinja2->torch) (3.0.3)
+Collecting mpmath<1.4,>=1.1.0 (from sympy->torch)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Downloading torch-2.2.2-cp39-none-macosx_10_9_x86_64.whl (150.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 150.8/150.8 MB 1.6 MB/s  0:01:12
+
+Downloading filelock-3.19.1-py3-none-any.whl (15 kB)
+Downloading fsspec-2025.10.0-py3-none-any.whl (200 kB)
+Downloading networkx-3.2.1-py3-none-any.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 2.0 MB/s  0:00:00
+
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 2.5 MB/s  0:00:02
+
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 1.3 MB/s  0:00:00
+
+Installing collected packages: mpmath, sympy, networkx, fsspec, filelock, torch
+
+
+Successfully installed filelock-3.19.1 fsspec-2025.10.0 mpmath-1.3.0 networkx-3.2.1 sympy-1.14.0 torch-2.2.2

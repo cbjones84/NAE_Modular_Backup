@@ -1,0 +1,38 @@
+# =============================================================================
+# NAE Docker - Minimal Requirements for Core Trading Agents
+# (Optimus, Ralph, Donnie)
+# =============================================================================
+
+# Core
+python-dotenv>=1.0.0
+requests>=2.26.0
+urllib3>=2.0.0
+
+# Data & Scientific Computing
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+scikit-learn>=1.3.0
+
+# Financial Data
+yfinance>=0.2.0
+
+# Inter-agent Communication
+redis>=4.5.0
+
+# Scheduling & Monitoring
+schedule>=1.2.0
+prometheus-client>=0.18.0
+
+# Configuration
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# Process Management
+psutil>=5.9.0
+
+# Async HTTP
+httpx>=0.25.0
+
+# WebSocket (needed by Tradier adapter)
+websocket-client>=1.6.0

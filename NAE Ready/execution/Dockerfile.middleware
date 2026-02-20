@@ -1,0 +1,23 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY signal_middleware/ ./signal_middleware/
+COPY pre_trade_validator/ ./pre_trade_validator/
+COPY monitoring/ ./monitoring/
+
+# Set environment variables
+ENV PYTHONPATH=/app
+ENV PYTHONUNBUFFERED=1
+
+# Expose port
+EXPOSE 8001
+
+# Run application
+CMD ["uvicorn", "signal_middleware.app:app", "--host", "0.0.0.0", "--port", "8001"]
+

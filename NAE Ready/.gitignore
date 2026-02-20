@@ -1,0 +1,60 @@
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.dev
+.env.prod
+.env.docker
+
+# Persistent data (trade history, sessions)
+data/
+
+# Safety files
+safety/locks/
+safety/logs/
+safety/device_id.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Master-Node
+master_api/models/
+node_api/cache/
+
+# Remote connection config (contains sensitive info)
+config/remote_config.json
+
+# External repositories (cloned for reference only)
+external/polymarket/agents/
+external/polymarket/py-clob-client/
+external/kalshi/tools-and-analysis/
+
+# Kalshi credentials
+**/kalshi_private_key.pem
+**/credentials.yaml
+
+# Secure vault (encrypted credentials)
+config/.vault.encrypted
+config/.master.key

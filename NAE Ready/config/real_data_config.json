@@ -1,0 +1,36 @@
+{
+  "enabled": true,
+  "web_scraping": {
+    "enabled": true,
+    "reddit": true,
+    "tradingview": true,
+    "seeking_alpha": true,
+    "rate_limit_delay": 1.0
+  },
+  "api_integrations": {
+    "enabled": true,
+    "twitter": {
+      "enabled": false,
+      "bearer_token": "YOUR_TWITTER_BEARER_TOKEN_HERE"
+    },
+    "reddit": {
+      "enabled": false,
+      "client_id": "YOUR_REDDIT_CLIENT_ID_HERE",
+      "client_secret": "YOUR_REDDIT_CLIENT_SECRET_HERE"
+    },
+    "discord": {
+      "enabled": false,
+      "bot_token": "YOUR_DISCORD_BOT_TOKEN_HERE"
+    },
+    "news_api_key": "YOUR_NEWS_API_KEY_HERE",
+    "alpha_vantage_key": "YOUR_ALPHA_VANTAGE_KEY_HERE"
+  },
+  "data_validation": {
+    "enabled": true,
+    "min_confidence_score": 25.0,
+    "max_risk_score": 85.0,
+    "min_quality_score": 15.0
+  },
+  "last_updated": "2025-01-27T00:00:00Z",
+  "notes": "Configure API keys to enable real data ingestion. Web scraping works without API keys."
+}

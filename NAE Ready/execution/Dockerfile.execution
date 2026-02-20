@@ -1,0 +1,56 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS lean-build
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Clone LEAN
+WORKDIR /opt
+RUN git clone https://github.com/QuantConnect/Lean.git
+
+# Build LEAN
+WORKDIR /opt/Lean
+RUN dotnet build
+
+# Runtime stage
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    git \
+    curl \
+    dotnet-sdk-8.0 \
+    redis-tools \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy LEAN binaries
+COPY --from=lean-build /opt/Lean /opt/lean
+
+# Copy execution engine code
+COPY execution_engine/ ./execution_engine/
+COPY broker_adapters/ ./broker_adapters/
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Install PyBroker (for QuantTrader backup)
+RUN pip install pybroker
+
+# Install NautilusTrader (for high-performance backup)
+RUN pip install nautilus_trader
+
+# Set environment variables
+ENV PYTHONPATH=/app
+ENV LEAN_PATH=/opt/lean
+ENV ALGORITHM_PATH=/app/algorithms/nae_signal_consumer
+
+# Run execution manager (handles primary + backups)
+CMD ["python3", "-m", "execution_engine"]
+

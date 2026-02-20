@@ -1,0 +1,102 @@
+{
+  "api_key_id": "72c42c1a-4ded-4d9f-91ae-3bed33952355",
+  "private_key_source": "vault_or_api_keys_json",
+  "private_key_notes": "Private key stored in config/api_keys.json and secure vault",
+  "demo_mode": false,
+  "max_position_size_usd": 1000.0,
+  "max_daily_trades": 20,
+  "risk_tolerance": "MODERATE",
+  "bonding_strategy": {
+    "enabled": true,
+    "min_probability": 0.95,
+    "max_days_to_close": 14,
+    "min_volume": 200,
+    "min_annualized_return_pct": 50.0,
+    "description": "Buy high-probability outcomes for consistent returns"
+  },
+  "arbitrage_strategy": {
+    "enabled": true,
+    "min_spread_pct": 0.03,
+    "polymarket_integration": true,
+    "description": "Exploit price differences between Kalshi and Polymarket"
+  },
+  "superforecast_strategy": {
+    "enabled": true,
+    "min_edge_pct": 0.10,
+    "min_confidence": 0.6,
+    "categories": ["economics", "politics", "finance"],
+    "description": "LLM-based probability estimation for edge detection"
+  },
+  "april_intelligence": {
+    "enabled": true,
+    "categories": ["economics", "finance"],
+    "description": "April provides crypto-macro correlation analysis",
+    "confidence_boost_pct": 20
+  },
+  "category_preferences": {
+    "economics": {
+      "enabled": true,
+      "weight": 1.0,
+      "april_expertise": true,
+      "notes": "Fed rates, inflation, GDP - April has crypto correlation edge"
+    },
+    "politics": {
+      "enabled": true,
+      "weight": 0.8,
+      "april_expertise": false,
+      "notes": "Elections, policy - check polling aggregates"
+    },
+    "weather": {
+      "enabled": true,
+      "weight": 0.6,
+      "april_expertise": false,
+      "notes": "Temperature, hurricanes - use weather models"
+    },
+    "finance": {
+      "enabled": true,
+      "weight": 0.9,
+      "april_expertise": true,
+      "notes": "Stock milestones, crypto - April has direct expertise"
+    },
+    "science": {
+      "enabled": false,
+      "weight": 0.3,
+      "april_expertise": false,
+      "notes": "Low volume, hard to predict"
+    }
+  },
+  "shredder_integration": {
+    "profit_routing_enabled": true,
+    "allocation_rules": {
+      "reinvestment_to_kalshi": 0.30,
+      "to_traditional_trading": 0.40,
+      "to_bitcoin": 0.15,
+      "to_reserve": 0.10,
+      "to_taxes": 0.05
+    },
+    "risk_limits": {
+      "max_nav_exposure_pct": 0.15,
+      "max_single_position_pct": 0.05,
+      "daily_loss_limit_pct": 0.02
+    }
+  },
+  "genny_integration": {
+    "tax_tracking_enabled": true,
+    "tax_treatment": "section_1256",
+    "60_40_split": true,
+    "form_required": "Form 6781"
+  },
+  "fee_structure": {
+    "winner_fee_pct": 7.0,
+    "notes": "Kalshi charges ~7% on winnings, no fee on losses"
+  },
+  "polling_interval_seconds": 300,
+  "regulatory_info": {
+    "regulator": "CFTC",
+    "type": "Designated Contract Market (DCM)",
+    "tax_reporting": "1099 forms issued",
+    "funds_custody": "FDIC-insured banks",
+    "legal_status": "Fully legal in most US states"
+  }
+}
+

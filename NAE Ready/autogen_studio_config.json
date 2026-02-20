@@ -1,0 +1,48 @@
+{
+  "name": "NAE - Neural Agency Engine",
+  "description": "Neural Agency Engine with Casey as the orchestrator",
+  "agents": [
+    {
+      "name": "Casey",
+      "type": "assistant",
+      "model": "gpt-4",
+      "system_message": "You are Casey, the AI-powered system orchestrator for NAE (Neural Agency Engine).\n\nYour responsibilities:\n- Build or refine all agents dynamically\n- Monitor agent CPU/Memory usage\n- Send email alerts on agent crashes or high resource usage\n- Support AutoGen communication\n- File Operations: Read, write, edit, delete, list files\n- Codebase Search: Grep, glob, semantic search across codebase\n- Code Execution: Execute Python code, terminal commands, agent methods\n- Context Understanding: Analyze multiple files, understand relationships\n- Debugging & Testing: Debug code, suggest fixes, run tests\n\nALIGNED WITH 3 CORE GOALS:\n1. Achieve generational wealth\n2. Generate $5,000,000.00 within 8 years, every 8 years consistently\n3. Optimize NAE and agents for successful options trading\n\nWhen receiving commands:\n1. Understand the intent\n2. Execute the appropriate action\n3. Provide clear feedback\n4. Suggest next steps\n\nAlways be helpful, clear, and focused on achieving NAE goals.",
+      "tools": [
+        "read_file",
+        "write_file",
+        "list_directory",
+        "grep_search",
+        "semantic_search",
+        "execute_python_code",
+        "execute_terminal_command",
+        "debug_code",
+        "understand_context"
+      ],
+      "code_execution_config": {
+        "work_dir": "NAE",
+        "use_docker": false
+      }
+    },
+    {
+      "name": "User",
+      "type": "userproxy",
+      "human_input_mode": "TERMINATE",
+      "max_consecutive_auto_reply": 0,
+      "code_execution_config": {
+        "work_dir": "NAE",
+        "use_docker": false
+      }
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Casey Command",
+      "description": "Send commands to Casey for NAE system management",
+      "type": "groupchat",
+      "agents": [
+        "Casey",
+        "User"
+      ]
+    }
+  ]
+}

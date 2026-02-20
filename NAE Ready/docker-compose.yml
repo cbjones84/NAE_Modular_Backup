@@ -1,0 +1,147 @@
+# =============================================================================
+# NAE Production Docker Compose
+# Neural Agency Engine - Autonomous Trading System
+# =============================================================================
+# Usage:
+#   docker-compose up -d          # Start all services
+#   docker-compose logs -f        # Follow all logs
+#   docker-compose logs optimus   # Follow Optimus logs
+#   docker-compose down           # Stop all services
+#   docker-compose restart optimus # Restart specific service
+# =============================================================================
+
+services:
+  # ---------------------------------------------------------------------------
+  # Infrastructure: Redis (inter-agent communication & caching)
+  # ---------------------------------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    container_name: nae_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    networks:
+      - nae_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+
+  # ---------------------------------------------------------------------------
+  # Optimus Agent - Primary Trading Agent
+  # ---------------------------------------------------------------------------
+  optimus:
+    build:
+      context: .
+      dockerfile: Dockerfile.optimus
+    container_name: optimus_agent
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - NAE_ENVIRONMENT=live
+      - TRADING_MODE=live
+      - NAE_PRODUCTION_MODE=true
+      - TRADIER_SANDBOX=false
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+      - ./config:/app/config
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - nae_network
+    ports:
+      - "8006:8006"
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+      restart_policy:
+        condition: any
+        delay: 10s
+        max_attempts: 0
+        window: 60s
+
+  # ---------------------------------------------------------------------------
+  # Ralph Agent - Research & Signal Generation
+  # ---------------------------------------------------------------------------
+  ralph:
+    build:
+      context: .
+      dockerfile: Dockerfile.ralph
+    container_name: ralph_agent
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - NAE_ENVIRONMENT=live
+      - NAE_PRODUCTION_MODE=true
+      - TRADIER_SANDBOX=false
+    volumes:
+      - ./logs:/app/logs
+      - ./config:/app/config
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - nae_network
+    ports:
+      - "8007:8007"
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+
+  # ---------------------------------------------------------------------------
+  # Donnie Agent - Execution Coordinator
+  # ---------------------------------------------------------------------------
+  donnie:
+    build:
+      context: .
+      dockerfile: Dockerfile.donnie
+    container_name: donnie_agent
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - NAE_ENVIRONMENT=live
+      - NAE_PRODUCTION_MODE=true
+      - TRADIER_SANDBOX=false
+    volumes:
+      - ./logs:/app/logs
+      - ./config:/app/config
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - nae_network
+    ports:
+      - "8008:8008"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+
+volumes:
+  redis_data:
+
+networks:
+  nae_network:
+    driver: bridge

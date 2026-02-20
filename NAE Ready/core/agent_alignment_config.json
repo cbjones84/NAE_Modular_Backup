@@ -1,0 +1,156 @@
+{
+  "mission": {
+    "name": "Operation $5M Growth",
+    "version": "1.0",
+    "created": "2025-12-03",
+    "target_goal": 5000000,
+    "stretch_goal": 15726144,
+    "timeline_years": 8,
+    "starting_capital": 100,
+    "biweekly_deposit": 100
+  },
+  "milestones": {
+    "year_1": {"target": 9411, "monthly_return": 0.30, "phase": "MICRO"},
+    "year_2": {"target": 44110, "monthly_return": 0.20, "phase": "SMALL"},
+    "year_3": {"target": 152834, "monthly_return": 0.12, "phase": "GROWTH"},
+    "year_4": {"target": 388657, "monthly_return": 0.08, "phase": "SCALE"},
+    "year_5": {"target": 982500, "monthly_return": 0.08, "phase": "SCALE"},
+    "year_6": {"target": 2477897, "monthly_return": 0.08, "phase": "SCALE"},
+    "year_7": {"target": 6243561, "monthly_return": 0.08, "phase": "SCALE"},
+    "year_8": {"target": 15726144, "monthly_return": 0.08, "phase": "SCALE"}
+  },
+  "agents": {
+    "optimus": {
+      "role": "Primary Trader",
+      "responsibilities": [
+        "Execute all trading strategies",
+        "Manage positions and exits",
+        "Optimize entry timing",
+        "Scale positions with account growth"
+      ],
+      "priority": 10,
+      "autonomous": true,
+      "strategies": [
+        "momentum_fractional",
+        "breakout_swing",
+        "leveraged_etf",
+        "high_growth_stocks",
+        "0dte_options",
+        "earnings_plays"
+      ]
+    },
+    "ralph": {
+      "role": "Learning Agent",
+      "responsibilities": [
+        "Continuously learn from trading books and resources",
+        "Extract new strategies and patterns",
+        "Update knowledge bases daily",
+        "Feed insights to Optimus"
+      ],
+      "priority": 9,
+      "autonomous": true,
+      "learning_sources": [
+        "options_trading",
+        "trading_psychology",
+        "technical_analysis",
+        "risk_management",
+        "market_microstructure"
+      ]
+    },
+    "casey": {
+      "role": "Coordinator",
+      "responsibilities": [
+        "Monitor all agent activities",
+        "Track progress toward milestones",
+        "Send alerts on important events",
+        "Coordinate inter-agent communication"
+      ],
+      "priority": 8,
+      "autonomous": true,
+      "monitoring": [
+        "daily_pnl",
+        "drawdown",
+        "win_rate",
+        "milestone_progress"
+      ]
+    },
+    "donnie": {
+      "role": "Developer",
+      "responsibilities": [
+        "Improve system performance",
+        "Fix bugs and issues",
+        "Automate manual processes",
+        "Enhance signal detection"
+      ],
+      "priority": 7,
+      "autonomous": true
+    },
+    "shredder": {
+      "role": "Risk Manager",
+      "responsibilities": [
+        "Enforce position limits",
+        "Monitor portfolio risk",
+        "Implement stop losses",
+        "Protect capital during drawdowns"
+      ],
+      "priority": 10,
+      "autonomous": true,
+      "risk_limits": {
+        "max_position_pct": 0.15,
+        "max_daily_loss_pct": 0.05,
+        "max_drawdown_pct": 0.15,
+        "max_portfolio_heat": 0.20
+      }
+    },
+    "splinter": {
+      "role": "Overseer",
+      "responsibilities": [
+        "Weekly strategy review",
+        "Long-term goal alignment",
+        "Provide wisdom and guidance",
+        "Approve major strategy changes"
+      ],
+      "priority": 6,
+      "autonomous": false,
+      "review_frequency": "weekly"
+    }
+  },
+  "operating_rules": {
+    "trading_hours": {
+      "market_open": "09:30",
+      "market_close": "16:00",
+      "pre_market_start": "04:00",
+      "after_hours_end": "20:00"
+    },
+    "execution_rules": {
+      "min_score_to_trade": 50,
+      "max_trades_per_day": 10,
+      "min_time_between_trades_minutes": 5,
+      "require_volume_confirmation": true
+    },
+    "risk_rules": {
+      "always_use_stop_loss": true,
+      "max_loss_per_trade_pct": 0.02,
+      "scale_out_at_targets": true,
+      "reduce_size_in_drawdown": true
+    },
+    "learning_rules": {
+      "update_knowledge_daily": true,
+      "review_trades_weekly": true,
+      "adapt_strategies_monthly": true
+    }
+  },
+  "autonomous_mode": {
+    "enabled": true,
+    "scan_interval_seconds": 60,
+    "directive_update_minutes": 5,
+    "report_interval_hours": 1,
+    "require_human_approval": false,
+    "emergency_stop_conditions": [
+      "daily_loss_exceeds_5_pct",
+      "drawdown_exceeds_15_pct",
+      "system_error_detected"
+    ]
+  }
+}
+

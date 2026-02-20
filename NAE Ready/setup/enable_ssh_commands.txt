@@ -1,0 +1,15 @@
+# Commands to Enable SSH on HP OmniBook X
+# Run these on HP OmniBook X (username: v-nat, IP: 192.168.132.68)
+
+sudo apt update
+sudo apt install openssh-server -y
+sudo systemctl enable ssh
+sudo systemctl start ssh
+sudo ufw allow 22
+sudo systemctl status ssh
+
+# Verify IP
+hostname -I
+
+# Should show: 192.168.132.68
+

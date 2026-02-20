@@ -1,0 +1,142 @@
+{
+  "heir_001": {
+    "timestamp": "2025-12-09T09:59:23.325016",
+    "heir_profile": {
+      "heir_id": "heir_001",
+      "name": "Test Heir",
+      "experience_level": "intermediate",
+      "interests": [
+        "trading",
+        "risk_management"
+      ]
+    },
+    "customized_recipes": [
+      {
+        "recipe_name": "Optimus_Success_2025-12-09",
+        "strategy_type": "Test Strategy",
+        "success_factors": {
+          "execution_speed": 0.5,
+          "risk_management": 0.3,
+          "profit_potential": 0.15,
+          "market_timing": 0
+        },
+        "wealth_impact": {
+          "immediate_gain": 1000,
+          "compound_potential": 1.0,
+          "risk_adjusted_return": 0,
+          "generational_multiplier": 1.0
+        },
+        "replicability_notes": [
+          "Strategy: Test Strategy",
+          "Risk management score: 0.3",
+          "Execution efficiency: 0.5",
+          "Positive profit achieved - strategy replicable"
+        ]
+      }
+    ],
+    "learning_path": {
+      "heir_id": "heir_001",
+      "experience_level": "intermediate",
+      "interests": [
+        "trading",
+        "risk_management"
+      ],
+      "modules": [
+        "Advanced Trading Strategies",
+        "Portfolio Optimization",
+        "Market Analysis Techniques",
+        "Generational Wealth Planning"
+      ],
+      "timeline": {
+        "duration_months": 8,
+        "milestones": 3,
+        "pace": "moderate"
+      },
+      "assessment_criteria": [
+        "Strategy implementation",
+        "Portfolio management",
+        "Market analysis",
+        "Risk assessment"
+      ],
+      "customization_notes": "Path customized for intermediate level with interests in trading, risk_management"
+    },
+    "mentorship_plan": {
+      "heir_id": "heir_001",
+      "experience_level": "intermediate",
+      "mentorship_duration": {
+        "months": 12,
+        "intensity": "medium",
+        "frequency": "bi-weekly"
+      },
+      "mentorship_activities": [
+        "Strategy implementation coaching",
+        "Portfolio management guidance",
+        "Market analysis training",
+        "Advanced risk assessment"
+      ],
+      "mentor_assignments": [
+        {
+          "mentor": "Optimus",
+          "role": "Execution Training",
+          "focus": "Trade Execution"
+        },
+        {
+          "mentor": "Ralph",
+          "role": "Strategy Development",
+          "focus": "Advanced Strategies"
+        }
+      ],
+      "progress_milestones": [
+        {
+          "milestone": "Strategy Implementation",
+          "timeline": "4 months",
+          "criteria": "Can implement basic strategies"
+        },
+        {
+          "milestone": "Portfolio Management",
+          "timeline": "8 months",
+          "criteria": "Can manage portfolio effectively"
+        },
+        {
+          "milestone": "Advanced Analysis",
+          "timeline": "12 months",
+          "criteria": "Can perform advanced market analysis"
+        }
+      ],
+      "knowledge_transfer_schedule": {
+        "frequency": "bi-weekly",
+        "duration_per_session": "3 hours",
+        "topics_per_session": 3,
+        "assessment_frequency": "quarterly"
+      }
+    },
+    "success_metrics": {
+      "heir_id": "heir_001",
+      "experience_level": "intermediate",
+      "knowledge_metrics": [
+        "Mastery of trading strategies",
+        "Understanding of portfolio management",
+        "Knowledge of market analysis techniques",
+        "Comprehension of generational wealth concepts"
+      ],
+      "skill_metrics": [
+        "Strategy implementation",
+        "Portfolio management",
+        "Market analysis",
+        "Risk assessment"
+      ],
+      "performance_metrics": [
+        "Strategy success rate",
+        "Risk management effectiveness",
+        "Portfolio performance",
+        "Learning curve progression"
+      ],
+      "ethical_metrics": [
+        "Ethical strategy implementation",
+        "Responsible risk management",
+        "Transparent reporting",
+        "Stakeholder value creation"
+      ]
+    }
+  }
+}

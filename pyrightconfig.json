@@ -1,0 +1,30 @@
+{
+  "include": [
+    "NAE"
+  ],
+  "exclude": [
+    "**/__pycache__",
+    "**/node_modules",
+    "**/.git"
+  ],
+  "executionEnvironments": [
+    {
+      "root": "NAE",
+      "pythonVersion": "3.9",
+      "pythonPlatform": "Darwin",
+      "extraPaths": [
+        "/Users/melissabishop/Library/Python/3.9/lib/python/site-packages"
+      ]
+    }
+  ],
+  "typeCheckingMode": "basic",
+  "reportMissingImports": "warning",
+  "reportMissingModuleSource": "warning",
+  "reportUnusedImport": "information",
+  "reportUnusedClass": "information",
+  "reportUnusedFunction": "information",
+  "reportUnusedVariable": "information"
+}
+
+
+

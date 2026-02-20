@@ -1,0 +1,52 @@
+{
+  "live": {
+    "name": "live",
+    "trading_mode": "live",
+    "broker": "tradier",
+    "aggressiveness": "VERY_AGGRESSIVE",
+    "risk_adjustment_factor": 1.5,
+    "api_base_urls": {
+      "tradier": "https://api.tradier.com/v1",
+      "polygon": "https://api.polygon.io"
+    },
+    "rate_limits": {
+      "tradier": 120,
+      "polygon": 5
+    },
+    "safety_limits": {
+      "max_order_size_usd": 50000.0,
+      "max_order_size_pct_nav": 0.50,
+      "daily_loss_limit_pct": 0.50,
+      "consecutive_loss_limit": 10,
+      "max_open_positions": 30
+    },
+    "enable_live_trading": true,
+    "require_approval": false,
+    "logging_level": "INFO"
+  },
+  "default": "live",
+  "active": "live",
+  "notes": {
+    "broker": "Tradier is the ONLY broker for NAE",
+    "mode": "LIVE trading only - no paper/sandbox",
+    "aggressiveness": "VERY_AGGRESSIVE (1.5x position sizing)",
+    "removed_brokers": ["alpaca", "ibkr"]
+  },
+  "growth_milestones": {
+    "year_1": {"target": 9411, "note": "$9,411 (+$6,911 returns)"},
+    "year_2": {"target": 44110, "note": "$44,110 (+$39,210 returns)"},
+    "year_3": {"target": 152834, "note": "$152,834 (+$145,534 returns)"},
+    "year_4": {"target": 388657, "note": "$388,657 (+$378,957 returns)"},
+    "year_5": {"target": 982500, "note": "$982,500 (+$970,400 returns)"},
+    "year_6": {"target": 2477897, "note": "$2,477,897 (+$2,463,397 returns)"},
+    "year_7": {"target": 6243561, "note": "$6,243,561 [TARGET EXCEEDED!]"},
+    "year_8": {"target": 15726144, "note": "$15,726,144 [FINAL: $15.7M]"}
+  },
+  "goals": {
+    "primary_target": 5000000.00,
+    "stretch_goal": 15726144.00,
+    "starting_capital": 100.00,
+    "timeframe_years": 8
+  },
+  "last_updated": "2026-01-06T00:00:00Z"
+}

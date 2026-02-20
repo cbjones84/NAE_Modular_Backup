@@ -1,0 +1,24 @@
+[
+  {
+    "timestamp": "2025-11-02 08:56:57",
+    "overall_status": "down",
+    "token_check": {
+      "status": "working",
+      "request_token": "Y25lPPYMtJ4Cn6nyZCMw...",
+      "authorize_url": "https://apisb.etrade.com/oauth/authorize?oauth_token=Y25lPPYMtJ4Cn6nyZCMwzAFHsh7Ne%2FEuwX4gP8Xr9aU%3D",
+      "working": true
+    },
+    "url_check": {
+      "status": "server_error",
+      "status_code": 500,
+      "error": "E*TRADE server returning 500 error",
+      "working": false
+    },
+    "api_check": {
+      "status": "up",
+      "status_code": 401,
+      "working": true,
+      "note": "Server is up (auth required)"
+    }
+  }
+]

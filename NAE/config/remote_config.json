@@ -1,0 +1,10 @@
+{
+  "hp_hostname": "192.168.132.68",
+  "hp_username": "v-nat",
+  "hp_port": 22,
+  "hp_nae_path": "~/NAE",
+  "ssh_key_path": "/Users/melissabishop/.ssh/id_rsa",
+  "connection_timeout": 10,
+  "owner": "Chris Jones",
+  "system_owner": "Chris Jones"
+}

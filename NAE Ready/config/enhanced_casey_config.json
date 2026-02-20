@@ -1,0 +1,46 @@
+{
+  "email": {
+    "from": "your_email@gmail.com",
+    "password": "your_app_password",
+    "to": "cbjones84@yahoo.com",
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587
+  },
+  "thresholds": {
+    "cpu_warning": 70,
+    "cpu_critical": 85,
+    "memory_warning_mb": 400,
+    "memory_critical_mb": 600,
+    "disk_warning": 80,
+    "disk_critical": 90
+  },
+  "monitoring": {
+    "system_check_interval": 30,
+    "agent_check_interval": 10,
+    "analysis_interval": 300,
+    "prediction_window": 3600
+  },
+  "ai": {
+    "anomaly_sensitivity": 0.1,
+    "prediction_confidence_threshold": 0.7,
+    "learning_rate": 0.01,
+    "enable_predictive_analysis": true
+  },
+  "capabilities": {
+    "advanced_reasoning": true,
+    "predictive_analytics": true,
+    "anomaly_detection": true,
+    "intelligent_routing": true,
+    "natural_language_processing": true,
+    "strategic_planning": true,
+    "resource_optimization": true,
+    "proactive_monitoring": true
+  },
+  "personality": {
+    "communication_style": "professional_helpful",
+    "analysis_depth": "comprehensive",
+    "response_time": "immediate",
+    "detail_level": "high",
+    "proactive_threshold": 0.8
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "nc": {
+    "nc_update_1767288465.135771": {
+      "update_type": "amendment",
+      "effective_date": "2026-01-01T12:27:45.135771",
+      "description": "NC tax law annual review - rates remain at 4.75%",
+      "impact": "neutral",
+      "affected_strategies": [
+        "capital_gains_treatment",
+        "business_expenses"
+      ],
+      "source": "ncdor.gov",
+      "discovered_date": "2026-01-01T12:27:45.135771"
+    },
+    "nc_update_1767374864.861456": {
+      "update_type": "amendment",
+      "effective_date": "2026-01-02T12:27:44.861456",
+      "description": "NC tax law annual review - rates remain at 4.75%",
+      "impact": "neutral",
+      "affected_strategies": [
+        "capital_gains_treatment",
+        "business_expenses"
+      ],
+      "source": "ncdor.gov",
+      "discovered_date": "2026-01-02T12:27:44.861456"
+    },
+    "nc_update_1767461263.565719": {
+      "update_type": "amendment",
+      "effective_date": "2026-01-03T12:27:43.565719",
+      "description": "NC tax law annual review - rates remain at 4.75%",
+      "impact": "neutral",
+      "affected_strategies": [
+        "capital_gains_treatment",
+        "business_expenses"
+      ],
+      "source": "ncdor.gov",
+      "discovered_date": "2026-01-03T12:27:43.565719"
+    },
+    "nc_update_1767547662.271521": {
+      "update_type": "amendment",
+      "effective_date": "2026-01-04T12:27:42.271521",
+      "description": "NC tax law annual review - rates remain at 4.75%",
+      "impact": "neutral",
+      "affected_strategies": [
+        "capital_gains_treatment",
+        "business_expenses"
+      ],
+      "source": "ncdor.gov",
+      "discovered_date": "2026-01-04T12:27:42.271521"
+    },
+    "nc_update_1767634061.256161": {
+      "update_type": "amendment",
+      "effective_date": "2026-01-05T12:27:41.256161",
+      "description": "NC tax law annual review - rates remain at 4.75%",
+      "impact": "neutral",
+      "affected_strategies": [
+        "capital_gains_treatment",
+        "business_expenses"
+      ],
+      "source": "ncdor.gov",
+      "discovered_date": "2026-01-05T12:27:41.256161"
+    }
+  }
+}

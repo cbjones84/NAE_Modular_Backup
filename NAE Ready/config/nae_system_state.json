@@ -1,0 +1,374 @@
+{
+  "system_version": "3.0",
+  "last_updated": "2026-01-06T00:00:00Z",
+  "system_status": "operational",
+  "trading_mode": "live",
+  "broker": "tradier",
+  "aggressiveness": "VERY_AGGRESSIVE",
+  "risk_adjustment_factor": 1.5,
+  
+  "agents": {
+    "casey": {
+      "name": "CaseyAgent",
+      "version": "v5",
+      "role": "System Orchestrator and Builder",
+      "capabilities": [
+        "Agent building and refinement",
+        "File operations (read/write/edit/delete)",
+        "Codebase search (grep/glob/semantic)",
+        "Code execution (Python/terminal/agent methods)",
+        "Context understanding and debugging",
+        "Security improvement handling",
+        "Agent monitoring and resource management"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/casey.py"
+    },
+    "ralph": {
+      "name": "RalphAgent",
+      "version": "v4",
+      "role": "Strategy Generation and Learning Agent",
+      "capabilities": [
+        "Market data integration (Polygon.io)",
+        "QuantConnect backtesting",
+        "AI source ingestion (Grok, DeepSeek, Claude)",
+        "Web scraping and forum content ingestion",
+        "Strategy validation and scoring",
+        "Trust/quality scoring",
+        "Strategy filtering and risk assessment"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/ralph.py",
+      "config": {
+        "min_trust_score": 55.0,
+        "min_backtest_score": 30.0,
+        "min_consensus_sources": 1,
+        "max_drawdown_pct": 0.6
+      }
+    },
+    "donnie": {
+      "name": "DonnieAgent",
+      "version": "v2",
+      "role": "Strategy Validation and Meta-Labeling",
+      "capabilities": [
+        "Strategy validation (trust_score >= 55, backtest_score >= 50)",
+        "Meta-labeling confidence scoring",
+        "Strategy execution coordination",
+        "Risk assessment"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/donnie.py"
+    },
+    "optimus": {
+      "name": "OptimusAgent",
+      "version": "v5",
+      "role": "Trade Execution Agent",
+      "capabilities": [
+        "LIVE trade execution (Tradier)",
+        "Day trading enabled",
+        "VERY_AGGRESSIVE risk management",
+        "Position tracking and P&L calculation",
+        "Kill switch management",
+        "Audit logging",
+        "Smart order routing",
+        "Kelly Criterion position sizing"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/optimus.py",
+      "trading_mode": "live",
+      "broker": "tradier",
+      "broker_integrations": ["tradier"],
+      "safety_features": {
+        "day_trading_prevention": "DISABLED",
+        "max_order_size_usd": 50000.0,
+        "daily_loss_limit_pct": 0.50,
+        "consecutive_loss_limit": 10,
+        "max_open_positions": 30
+      }
+    },
+    "genny": {
+      "name": "GennyAgent",
+      "version": "v2",
+      "role": "Generational Wealth Tracking",
+      "capabilities": [
+        "Wealth tracking and growth monitoring",
+        "Success pattern analysis",
+        "Educational advisory",
+        "Ethical compliance monitoring"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/genny.py"
+    },
+    "phisher": {
+      "name": "PhisherAgent",
+      "version": "v1",
+      "role": "Security and Threat Detection",
+      "capabilities": [
+        "Code vulnerability scanning",
+        "Threat detection",
+        "Security improvement recommendations"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/phisher.py"
+    },
+    "bebop": {
+      "name": "BebopAgent",
+      "version": "v1",
+      "role": "Monitoring and Oversight",
+      "capabilities": [
+        "System monitoring",
+        "Performance tracking",
+        "Audit oversight"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/bebop.py"
+    },
+    "rocksteady": {
+      "name": "RocksteadyAgent",
+      "version": "v1",
+      "role": "Defense and Protection",
+      "capabilities": [
+        "Defensive measures",
+        "Threat blocking",
+        "Security enforcement"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/rocksteady.py"
+    },
+    "splinter": {
+      "name": "SplinterAgent",
+      "version": "v1",
+      "role": "Master and Supervisor",
+      "capabilities": [
+        "System oversight",
+        "Coordination",
+        "Decision making"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/splinter.py"
+    },
+    "mikey": {
+      "name": "MikeyAgent",
+      "version": "v2",
+      "role": "Cloud Bridge Agent",
+      "capabilities": [
+        "Cloud synchronization",
+        "Remote API management",
+        "External AI system integration"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/mikey.py"
+    },
+    "leo": {
+      "name": "LeoAgent",
+      "version": "v1",
+      "role": "Data Analysis",
+      "capabilities": [
+        "Data analysis",
+        "Reporting"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/leo.py"
+    },
+    "april": {
+      "name": "AprilAgent",
+      "version": "v1.0",
+      "role": "Bitcoin Migration and Crypto Specialist",
+      "capabilities": [
+        "Bitcoin migration strategies",
+        "Fiat to cryptocurrency conversion",
+        "Crypto portfolio management"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/april.py"
+    },
+    "shredder": {
+      "name": "ShredderAgent",
+      "version": "v1",
+      "role": "Profit Allocation",
+      "capabilities": [
+        "Profit allocation",
+        "Wealth distribution"
+      ],
+      "status": "active",
+      "mode": "live",
+      "file": "agents/shredder.py"
+    }
+  },
+  
+  "broker_adapters": {
+    "tradier": {
+      "status": "configured",
+      "sdk": "tradier REST API",
+      "endpoint": "https://api.tradier.com/v1",
+      "mode": "live",
+      "capabilities": [
+        "Stock market/limit orders",
+        "Single-leg options",
+        "Multi-leg options (straddles, spreads)",
+        "Account management",
+        "Position tracking",
+        "Real-time quotes",
+        "WebSocket streaming"
+      ],
+      "credentials": {
+        "storage": "secure_vault",
+        "status": "configured"
+      },
+      "file": "execution/broker_adapters/tradier_adapter.py"
+    }
+  },
+  
+  "recent_updates": {
+    "2026-01-06": {
+      "updates": [
+        {
+          "type": "broker_consolidation",
+          "description": "Switched to Tradier as ONLY broker - removed Alpaca and IBKR",
+          "files": ["config/broker_adapters.json", "config/settings.json", "config/nae_system_state.json"],
+          "features": [
+            "LIVE trading mode only",
+            "No paper/sandbox trading",
+            "Tradier REST API integration",
+            "WebSocket streaming support"
+          ]
+        },
+        {
+          "type": "aggressiveness_upgrade",
+          "description": "Set VERY_AGGRESSIVE mode for all trading operations",
+          "files": ["config/settings.json", "core/growth_milestones.py"],
+          "features": [
+            "1.5x position size multiplier",
+            "50% max order size",
+            "30 max positions",
+            "50% daily loss limit"
+          ]
+        },
+        {
+          "type": "mode_switch",
+          "description": "ALL agents switched to LIVE mode",
+          "files": ["all agent files"],
+          "features": [
+            "No more paper trading",
+            "Direct market execution",
+            "Real-time P&L tracking"
+          ]
+        }
+      ]
+    }
+  },
+  
+  "system_architecture": {
+    "workflow": {
+      "strategy_generation": {
+        "agent": "ralph",
+        "process": "Ingest from AI/web sources → Normalize → Backtest → Score → Filter"
+      },
+      "strategy_validation": {
+        "agent": "donnie",
+        "process": "Validate trust_score >= 55, backtest_score >= 50, meta-labeling confidence"
+      },
+      "trade_execution": {
+        "agent": "optimus",
+        "process": "Pre-trade checks → Execute via Tradier → Track positions → Audit log",
+        "broker": "tradier",
+        "mode": "LIVE",
+        "safety_checks": [
+          "Kill switch",
+          "Daily loss limit",
+          "Consecutive losses",
+          "Position limits",
+          "Order size limits"
+        ]
+      }
+    },
+    "data_flow": "Ralph → Donnie → Optimus → Tradier → Positions"
+  },
+  
+  "current_state": {
+    "account": {
+      "broker": "tradier",
+      "mode": "live"
+    },
+    "strategies_tested": {
+      "generated": 3,
+      "validated": 2,
+      "executed": 2,
+      "successful": 2
+    }
+  },
+  
+  "configuration": {
+    "trading": {
+      "default_mode": "live",
+      "broker": "tradier",
+      "day_trading": "ENABLED",
+      "min_holding_period": "none",
+      "aggressiveness": "VERY_AGGRESSIVE"
+    },
+    "safety": {
+      "max_order_size_usd": 50000.0,
+      "daily_loss_limit_pct": 0.50,
+      "consecutive_loss_limit": 10,
+      "max_open_positions": 30
+    },
+    "credentials": {
+      "tradier": {
+        "storage": "secure_vault",
+        "status": "configured"
+      }
+    }
+  },
+  
+  "growth_milestones": {
+    "description": "Official NAE growth milestones",
+    "year_1": {"target": 9411, "note": "$9,411 (+$6,911 returns)"},
+    "year_2": {"target": 44110, "note": "$44,110 (+$39,210 returns)"},
+    "year_3": {"target": 152834, "note": "$152,834 (+$145,534 returns)"},
+    "year_4": {"target": 388657, "note": "$388,657 (+$378,957 returns)"},
+    "year_5": {"target": 982500, "note": "$982,500 (+$970,400 returns)"},
+    "year_6": {"target": 2477897, "note": "$2,477,897 (+$2,463,397 returns)"},
+    "year_7": {"target": 6243561, "note": "$6,243,561 [TARGET EXCEEDED!]"},
+    "year_8": {"target": 15726144, "note": "$15,726,144 [FINAL: $15.7M]"}
+  },
+  
+  "goals": {
+    "primary_target": 5000000.00,
+    "stretch_goal": 15726144.00,
+    "starting_capital": 100.00,
+    "biweekly_deposit": 100.00,
+    "timeframe_years": 8
+  },
+  
+  "codebase_structure": {
+    "agents": "NAE/agents/",
+    "adapters": "NAE/adapters/",
+    "execution": "NAE/execution/",
+    "tools": "NAE/tools/",
+    "config": "NAE/config/",
+    "logs": "NAE/logs/",
+    "docs": "NAE/docs/",
+    "scripts": "NAE/scripts/"
+  },
+  
+  "key_files": {
+    "goal_manager": "NAE/goal_manager.py",
+    "secure_vault": "NAE/secure_vault.py",
+    "tradier_adapter": "NAE/execution/broker_adapters/tradier_adapter.py",
+    "optimus_agent": "NAE/agents/optimus.py",
+    "ralph_agent": "NAE/agents/ralph.py",
+    "donnie_agent": "NAE/agents/donnie.py"
+  }
+}

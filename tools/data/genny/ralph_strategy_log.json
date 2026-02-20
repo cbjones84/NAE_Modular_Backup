@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "2025-12-09T09:59:23.323832",
+    "strategy_details": {
+      "name": "Test Strategy",
+      "trust_score": 85,
+      "backtest_score": 78,
+      "consensus_count": 3,
+      "risk_reward": 2.5
+    },
+    "success_factors": {
+      "trust_score": 85,
+      "backtest_performance": 78,
+      "consensus_level": 3,
+      "risk_reward_ratio": 2.5,
+      "market_conditions": 0
+    },
+    "learning_insights": {
+      "pattern_recognition": "unknown",
+      "adaptation_mechanism": "unknown",
+      "knowledge_transfer_potential": 0,
+      "heir_applicability": 0.5
+    },
+    "replicability_score": 0.6
+  }
+]

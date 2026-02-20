@@ -1,0 +1,24 @@
+{
+  "api_endpoint": "https://api.ledgerwallet.com",
+  "wallet_addresses": {},
+  "supported_coins": [
+    "bitcoin",
+    "ethereum",
+    "litecoin",
+    "bitcoin_cash"
+  ],
+  "exchange_apis": {
+    "binance": {
+      "api_key": "STORED_IN_VAULT",
+      "secret": "STORED_IN_VAULT"
+    },
+    "coinbase": {
+      "api_key": "STORED_IN_VAULT",
+      "secret": "STORED_IN_VAULT"
+    },
+    "kraken": {
+      "api_key": "STORED_IN_VAULT",
+      "secret": "STORED_IN_VAULT"
+    }
+  }
+}

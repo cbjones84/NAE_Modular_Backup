@@ -1,0 +1,116 @@
+{
+  "environment": "production",
+  "redis": {
+    "host": "localhost",
+    "port": 6379,
+    "db": 0,
+    "password": null,
+    "decode_responses": true,
+    "socket_timeout": 5,
+    "socket_connect_timeout": 5,
+    "retry_on_timeout": true,
+    "health_check_interval": 30
+  },
+  "kill_switch": {
+    "enabled": true,
+    "key": "TRADING_ENABLED",
+    "default_state": true,
+    "monitor_interval": 10,
+    "auto_activate_triggers": [
+      "daily_loss_limit_exceeded",
+      "consecutive_loss_limit_exceeded",
+      "system_error_threshold"
+    ]
+  },
+  "trading": {
+    "default_mode": "live",
+    "broker": "tradier",
+    "sandbox": {
+      "enabled": false,
+      "simulate_delays": false,
+      "simulate_slippage": false
+    },
+    "paper": {
+      "enabled": false
+    },
+    "live": {
+      "enabled": true,
+      "broker": "tradier",
+      "requires_manual_approval": false
+    }
+  },
+  "aggressiveness": "VERY_AGGRESSIVE",
+  "risk_adjustment_factor": 1.5,
+  "safety_limits": {
+    "max_order_size_usd": 50000.0,
+    "max_order_size_pct_nav": 0.50,
+    "max_daily_volume_pct": 0.05,
+    "max_price_deviation_pct": 0.10,
+    "daily_loss_limit_pct": 0.50,
+    "consecutive_loss_limit": 10,
+    "max_open_positions": 30,
+    "max_leverage": 2.0
+  },
+  "logging": {
+    "level": "INFO",
+    "file_rotation": true,
+    "max_file_size_mb": 100,
+    "backup_count": 5,
+    "audit_logging": true,
+    "immutable_audit": true
+  },
+  "monitoring": {
+    "health_check_interval": 30,
+    "metrics_collection": true,
+    "alert_thresholds": {
+      "cpu_usage": 80,
+      "memory_usage": 85,
+      "disk_usage": 90,
+      "error_rate": 5
+    }
+  },
+  "security": {
+    "encrypt_sensitive_data": true,
+    "require_authentication": true,
+    "session_timeout": 3600,
+    "max_login_attempts": 3,
+    "lockout_duration": 900
+  },
+  "production": {
+    "vps": {
+      "host": "YOUR_VPS_HOST_HERE",
+      "port": 22,
+      "user": "nae_user",
+      "deployment_path": "/opt/nae",
+      "backup_enabled": true,
+      "backup_retention_days": 30
+    },
+    "ssl": {
+      "enabled": true,
+      "cert_path": "/etc/ssl/certs/nae.crt",
+      "key_path": "/etc/ssl/private/nae.key"
+    },
+    "firewall": {
+      "enabled": true,
+      "allowed_ports": [22, 80, 443, 6379],
+      "restrict_api_access": true
+    }
+  },
+  "growth_milestones": {
+    "year_1": 9411,
+    "year_2": 44110,
+    "year_3": 152834,
+    "year_4": 388657,
+    "year_5": 982500,
+    "year_6": 2477897,
+    "year_7": 6243561,
+    "year_8": 15726144
+  },
+  "goals": {
+    "primary_target": 5000000.00,
+    "stretch_goal": 15726144.00,
+    "starting_capital": 100.00,
+    "timeframe_years": 8
+  },
+  "last_updated": "2026-01-06T00:00:00Z"
+}

@@ -1,0 +1,145 @@
+version: '3.8'
+
+services:
+  # Signal Middleware
+  signal-middleware:
+    build:
+      context: .
+      dockerfile: Dockerfile.middleware
+    ports:
+      - "8001:8001"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=nae_execution
+      - POSTGRES_USER=nae
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - HMAC_SECRET=${HMAC_SECRET}
+    depends_on:
+      - redis
+      - postgres
+    restart: unless-stopped
+    networks:
+      - nae-execution
+
+  # Redis Queue
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - nae-execution
+
+  # PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=nae_execution
+      - POSTGRES_USER=nae
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    restart: unless-stopped
+    networks:
+      - nae-execution
+
+  # Monitoring (Prometheus)
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    restart: unless-stopped
+    networks:
+      - nae-execution
+
+  # Monitoring (Grafana)
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana_dashboards:/etc/grafana/provisioning/dashboards
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+    networks:
+      - nae-execution
+
+  # Execution Engine - Unified Manager (Primary: LEAN, Backups: QuantTrader/Nautilus)
+  execution-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile.execution
+    environment:
+      - REDIS_HOST=redis
+      - LEAN_PATH=/opt/lean
+      - ALGORITHM_PATH=/app/algorithms/nae_signal_consumer
+      - PRIMARY_BROKER=${PRIMARY_BROKER:-schwab}
+      - SECONDARY_BROKER=${SECONDARY_BROKER:-ibkr}
+      - SCHWAB_API_KEY=${SCHWAB_API_KEY}
+      - SCHWAB_API_SECRET=${SCHWAB_API_SECRET}
+      - SCHWAB_ACCOUNT_ID=${SCHWAB_ACCOUNT_ID}
+      - ALPACA_API_KEY=${ALPACA_API_KEY}
+      - ALPACA_API_SECRET=${ALPACA_API_SECRET}
+      - EXECUTION_FAILOVER_THRESHOLD=${EXECUTION_FAILOVER_THRESHOLD:-5}
+      - EXECUTION_FAILOVER_TIMEOUT=${EXECUTION_FAILOVER_TIMEOUT:-300}
+    depends_on:
+      - redis
+    volumes:
+      - lean_data:/opt/lean
+    restart: unless-stopped
+    networks:
+      - nae-execution
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import redis; r=redis.Redis(host='redis'); r.ping()"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Reconciliation Service
+  reconciliation:
+    build:
+      context: .
+      dockerfile: Dockerfile.reconciliation
+    environment:
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=postgres
+      - POSTGRES_DB=nae_execution
+      - POSTGRES_USER=nae
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    depends_on:
+      - redis
+      - postgres
+    restart: unless-stopped
+    networks:
+      - nae-execution
+
+volumes:
+  redis_data:
+  postgres_data:
+  prometheus_data:
+  grafana_data:
+  lean_data:
+
+networks:
+  nae-execution:
+    driver: bridge
+
